@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rtslib.utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rtslib-module.html">Package&nbsp;rtslib</a> ::
+        Module&nbsp;utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rtslib.utils-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module utils</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.utils-pysrc.html">source&nbsp;code</a></span></p>
+<p>Provides various utility functions.</p>
+  <p>This file is part of RTSLib Community Edition. Copyright (c) 2011 by 
+  RisingTide Systems LLC</p>
+  <p>This program is free software: you can redistribute it and/or modify 
+  it under the terms of the GNU Affero General Public License as published 
+  by the Free Software Foundation, version 3 (AGPLv3).</p>
+  <p>This program is distributed in the hope that it will be useful, but 
+  WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
+  General Public License for more details.</p>
+  <p>You should have received a copy of the GNU Affero General Public 
+  License along with this program.  If not, see 
+  &lt;http://www.gnu.org/licenses/&gt;.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td class="summary" colspan="2">
+        <a href="rtslib.utils.RTSLibError-class.html" class="summary-name">RTSLibError</a><br />
+      Generic rtslib error.
+    </td>
+  </tr>
+<tr>
+    <td class="summary" colspan="2">
+        <a href="rtslib.utils.RTSLibBrokenLink-class.html" class="summary-name">RTSLibBrokenLink</a><br />
+      Broken link in configfs, i.e.
+    </td>
+  </tr>
+<tr>
+    <td class="summary" colspan="2">
+        <a href="rtslib.utils.RTSLibNotInCFS-class.html" class="summary-name">RTSLibNotInCFS</a><br />
+      The underlying configfs object does not exist.
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#fwrite" class="summary-sig-name">fwrite</a>(<span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">string</span>)</span><br />
+      This function writes a string to a file, and takes care of opening it
+      and closing it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#fwrite">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#fread" class="summary-sig-name">fread</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      This function reads the contents of a file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#fread">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#is_dev_in_use" class="summary-sig-name">is_dev_in_use</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      This function will check if the device or file referenced by path is 
+      already mounted or used as a storage object backend.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#is_dev_in_use">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#is_disk_partition" class="summary-sig-name">is_disk_partition</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      Try to find out if path is a partition of a TYPE_DISK device.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#is_disk_partition">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_disk_size"></a><span class="summary-sig-name">get_disk_size</span>(<span class="summary-sig-arg">path</span>)</span><br />
+      This function returns the size in bytes of a disk-type block device, 
+      or None if path does not point to a disk- type device.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#get_disk_size">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_block_numbers"></a><span class="summary-sig-name">get_block_numbers</span>(<span class="summary-sig-arg">path</span>)</span><br />
+      This function returns a (major,minor) tuple for the block device 
+      found at path, or (None, None) if path is not a block device.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#get_block_numbers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#get_block_type" class="summary-sig-name">get_block_type</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      This function returns a block device's type.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#get_block_type">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="list_scsi_hbas"></a><span class="summary-sig-name">list_scsi_hbas</span>()</span><br />
+      This function returns the list of HBA indexes for existing SCSI HBAs.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#list_scsi_hbas">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#convert_scsi_path_to_hctl" class="summary-sig-name">convert_scsi_path_to_hctl</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      This function returns the SCSI ID in H:C:T:L form for the block 
+      device being mapped to the udev path specified.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#convert_scsi_path_to_hctl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#convert_scsi_hctl_to_path" class="summary-sig-name">convert_scsi_hctl_to_path</a>(<span class="summary-sig-arg">host</span>,
+        <span class="summary-sig-arg">controller</span>,
+        <span class="summary-sig-arg">target</span>,
+        <span class="summary-sig-arg">lun</span>)</span><br />
+      This function returns a udev path pointing to the block device being 
+      mapped to the SCSI device that has the provided H:C:T:L.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#convert_scsi_hctl_to_path">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#human_to_bytes" class="summary-sig-name">human_to_bytes</a>(<span class="summary-sig-arg">hsize</span>,
+        <span class="summary-sig-arg">kilo</span>=<span class="summary-sig-default">1024</span>)</span><br />
+      This function converts human-readable amounts of bytes to bytes.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#human_to_bytes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="bytes_to_human"></a><span class="summary-sig-name">bytes_to_human</span>(<span class="summary-sig-arg">size</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#bytes_to_human">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#generate_wwn" class="summary-sig-name">generate_wwn</a>(<span class="summary-sig-arg">wwn_type</span>)</span><br />
+      Generates a random WWN of the specified type:</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#generate_wwn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#is_valid_wwn" class="summary-sig-name">is_valid_wwn</a>(<span class="summary-sig-arg">wwn_type</span>,
+        <span class="summary-sig-arg">wwn</span>,
+        <span class="summary-sig-arg">wwn_list</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns True if the wwn is a valid wwn of type wwn_type.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#is_valid_wwn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="list_available_kernel_modules"></a><span class="summary-sig-name">list_available_kernel_modules</span>()</span><br />
+      List all loadable kernel modules as registered by depmod</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#list_available_kernel_modules">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="list_loaded_kernel_modules"></a><span class="summary-sig-name">list_loaded_kernel_modules</span>()</span><br />
+      List all currently loaded kernel modules</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#list_loaded_kernel_modules">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#modprobe" class="summary-sig-name">modprobe</a>(<span class="summary-sig-arg">module</span>)</span><br />
+      Load the specified kernel module if needed.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#modprobe">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#exec_argv" class="summary-sig-name">exec_argv</a>(<span class="summary-sig-arg">argv</span>,
+        <span class="summary-sig-arg">strip</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">shell</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Executes a command line given as an argv table and either:</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#exec_argv">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="dict_remove"></a><span class="summary-sig-name">dict_remove</span>(<span class="summary-sig-arg">d</span>,
+        <span class="summary-sig-arg">items</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#dict_remove">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_attributes"></a><span class="summary-sig-name">set_attributes</span>(<span class="summary-sig-arg">obj</span>,
+        <span class="summary-sig-arg">attr_dict</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#set_attributes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.utils-module.html#list_eth_ips" class="summary-sig-name">list_eth_ips</a>(<span class="summary-sig-arg">ifnames</span>=<span class="summary-sig-default">None</span>)</span><br />
+      List the IPv4 and IPv6 non-loopback, non link-local addresses (in the
+      RFC3330 sense, not addresses attached to lo) of a list of ethernet 
+      interfaces from the SIOCGIFADDR struct.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#list_eth_ips">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_ipv4_address"></a><span class="summary-sig-name">is_ipv4_address</span>(<span class="summary-sig-arg">addr</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#is_ipv4_address">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_ipv6_address"></a><span class="summary-sig-name">is_ipv6_address</span>(<span class="summary-sig-arg">addr</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#is_ipv6_address">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_test"></a><span class="summary-sig-name">_test</span>()</span><br />
+      Run the doctests</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.utils-pysrc.html#_test">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'rtslib'"><code class="variable-quote">'</code><code class="variable-string">rtslib</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="fwrite"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fwrite</span>(<span class="sig-arg">path</span>,
+        <span class="sig-arg">string</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#fwrite">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function writes a string to a file, and takes care of opening it 
+  and closing it. If the file does not exist, it will be created.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> rtslib.utils <span class="py-keyword">import</span> *
+<span class="py-prompt">&gt;&gt;&gt; </span>fwrite(<span class="py-string">&quot;/tmp/test&quot;</span>, <span class="py-string">&quot;hello&quot;</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>fread(<span class="py-string">&quot;/tmp/test&quot;</span>)
+<span class="py-output">'hello'</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (string) - The file to write to.</li>
+        <li><strong class="pname"><code>string</code></strong> (string) - The string to write to the file.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fread"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fread</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#fread">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function reads the contents of a file. It takes care of opening 
+  and closing it.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> rtslib.utils <span class="py-keyword">import</span> *
+<span class="py-prompt">&gt;&gt;&gt; </span>fwrite(<span class="py-string">&quot;/tmp/test&quot;</span>, <span class="py-string">&quot;hello&quot;</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>fread(<span class="py-string">&quot;/tmp/test&quot;</span>)
+<span class="py-output">'hello'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>fread(<span class="py-string">&quot;/tmp/notexistingfile&quot;</span>) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-except">Traceback (most recent call last):</span>
+<span class="py-except">    ...</span>
+<span class="py-except">IOError: [Errno 2] No such file or directory: '/tmp/notexistingfile'</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (string) - The path to the file to read from.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A string containing the file's contents.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="is_dev_in_use"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">is_dev_in_use</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#is_dev_in_use">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function will check if the device or file referenced by path is 
+  already mounted or used as a storage object backend.  It works by trying 
+  to open the path with O_EXCL flag, which will fail if someone else 
+  already did.  Note that the file is closed before the function returns, 
+  so this does not guaranteed the device will still be available after the 
+  check.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (string) - path to the file of device to check</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A boolean, True is we cannot get exclusive descriptor on the 
+          path, False if we can.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="is_disk_partition"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">is_disk_partition</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#is_disk_partition">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Try to find out if path is a partition of a TYPE_DISK device. Handles 
+  both /dev/sdaX and /dev/disk/by-*/*-part? schemes.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_block_type"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_block_type</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#get_block_type">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function returns a block device's type. Example: 0 is TYPE_DISK 
+  If no match is found, None is returned.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">from</span> rtslib.utils <span class="py-keyword">import</span> *
+<span class="py-prompt">&gt;&gt;&gt; </span>get_block_type(<span class="py-string">&quot;/dev/sda&quot;</span>)
+<span class="py-output">0</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>get_block_type(<span class="py-string">&quot;/dev/sr0&quot;</span>)
+<span class="py-output">5</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>get_block_type(<span class="py-string">&quot;/dev/scd0&quot;</span>)
+<span class="py-output">5</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>get_block_type(<span class="py-string">&quot;/dev/nodevicehere&quot;</span>) <span class="py-keyword">is</span> None
+<span class="py-output">True</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (string) - path to the block device</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An int for the block device type, or None if not a block device.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="convert_scsi_path_to_hctl"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">convert_scsi_path_to_hctl</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#convert_scsi_path_to_hctl">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function returns the SCSI ID in H:C:T:L form for the block device
+  being mapped to the udev path specified. If no match is found, None is 
+  returned.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> rtslib.utils <span class="py-keyword">as</span> utils
+<span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_path_to_hctl(<span class="py-string">'/dev/scd0'</span>)
+<span class="py-output">(2, 0, 0, 0)</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_path_to_hctl(<span class="py-string">'/dev/sr0'</span>)
+<span class="py-output">(2, 0, 0, 0)</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_path_to_hctl(<span class="py-string">'/dev/sda'</span>)
+<span class="py-output">(3, 0, 0, 0)</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_path_to_hctl(<span class="py-string">'/dev/sda1'</span>)
+<span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_path_to_hctl(<span class="py-string">'/dev/sdb'</span>)
+<span class="py-output">(3, 0, 1, 0)</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_path_to_hctl(<span class="py-string">'/dev/sdc'</span>)
+<span class="py-output">(3, 0, 2, 0)</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (string) - The udev path to the SCSI block device.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An (host, controller, target, lun) tuple of integer values 
+          representing the SCSI ID of the device, or None if no match is 
+          found.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="convert_scsi_hctl_to_path"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">convert_scsi_hctl_to_path</span>(<span class="sig-arg">host</span>,
+        <span class="sig-arg">controller</span>,
+        <span class="sig-arg">target</span>,
+        <span class="sig-arg">lun</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#convert_scsi_hctl_to_path">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function returns a udev path pointing to the block device being 
+  mapped to the SCSI device that has the provided H:C:T:L.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> rtslib.utils <span class="py-keyword">as</span> utils
+<span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_hctl_to_path(0,0,0,0)
+<span class="py-output">''</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_hctl_to_path(2,0,0,0) <span class="py-comment"># doctest: +ELLIPSIS</span>
+<span class="py-output">'/dev/s...0'</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.convert_scsi_hctl_to_path(3,0,2,0)
+<span class="py-output">'/dev/sdc'</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>host</code></strong> (int) - The SCSI host id.</li>
+        <li><strong class="pname"><code>controller</code></strong> (int) - The SCSI controller id.</li>
+        <li><strong class="pname"><code>target</code></strong> (int) - The SCSI target id.</li>
+        <li><strong class="pname"><code>lun</code></strong> (int) - The SCSI Logical Unit Number.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A string for the canonical path to the device, or empty string.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="human_to_bytes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">human_to_bytes</span>(<span class="sig-arg">hsize</span>,
+        <span class="sig-arg">kilo</span>=<span class="sig-default">1024</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#human_to_bytes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>This function converts human-readable amounts of bytes to bytes. It 
+  understands the following units :</p>
+  <ul>
+    <li>
+      <i>B</i> or no unit present for Bytes
+    </li>
+    <li>
+      <i>k</i>, <i>K</i>, <i>kB</i>, <i>KB</i> for kB (kilobytes)
+    </li>
+    <li>
+      <i>m</i>, <i>M</i>, <i>mB</i>, <i>MB</i> for MB (megabytes)
+    </li>
+    <li>
+      <i>g</i>, <i>G</i>, <i>gB</i>, <i>GB</i> for GB (gigabytes)
+    </li>
+    <li>
+      <i>t</i>, <i>T</i>, <i>tB</i>, <i>TB</i> for TB (terabytes)
+    </li>
+  </ul>
+  <p>Note: The definition of <i>kilo</i> defaults to 1kB = 1024Bytes. 
+  Strictly speaking, those should not be called <i>kB</i> but <i>kiB</i>. 
+  You can override that with the optional kilo parameter.</p>
+  <p>Example:</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> rtslib.utils <span class="py-keyword">as</span> utils
+<span class="py-prompt">&gt;&gt;&gt; </span>utils.human_to_bytes(<span class="py-string">&quot;1k&quot;</span>)
+<span class="py-output">1024</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.human_to_bytes(<span class="py-string">&quot;1k&quot;</span>, 1000)
+<span class="py-output">1000</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.human_to_bytes(<span class="py-string">&quot;1MB&quot;</span>)
+<span class="py-output">1048576</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>utils.human_to_bytes(<span class="py-string">&quot;12kB&quot;</span>)
+<span class="py-output">12288</span></pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>hsize</code></strong> (string or int) - The human-readable version of the Bytes amount to convert</li>
+        <li><strong class="pname"><code>kilo</code></strong> (int) - Optionnal base for the kilo prefix</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>An int representing the human-readable string converted to bytes</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generate_wwn"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generate_wwn</span>(<span class="sig-arg">wwn_type</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#generate_wwn">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generates a random WWN of the specified type:</p>
+  <ul>
+    <li>
+      unit_serial: T10 WWN Unit Serial.
+    </li>
+    <li>
+      iqn: iSCSI IQN
+    </li>
+    <li>
+      naa: SAS NAA address
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>wwn_type</code></strong> (str) - The WWN address type.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>A string containing the WWN.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="is_valid_wwn"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">is_valid_wwn</span>(<span class="sig-arg">wwn_type</span>,
+        <span class="sig-arg">wwn</span>,
+        <span class="sig-arg">wwn_list</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#is_valid_wwn">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns True if the wwn is a valid wwn of type wwn_type.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>wwn_type</code></strong> (str) - The WWN address type.</li>
+        <li><strong class="pname"><code>wwn</code></strong> (str) - The WWN address to check.</li>
+        <li><strong class="pname"><code>wwn_list</code></strong> (list of str) - An optional list of wwns to check the wwn parameter from.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>bool.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="modprobe"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">modprobe</span>(<span class="sig-arg">module</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#modprobe">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Load the specified kernel module if needed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>module</code></strong> (str) - The name of the kernel module to be loaded.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>Whether of not we had to load the module.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="exec_argv"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">exec_argv</span>(<span class="sig-arg">argv</span>,
+        <span class="sig-arg">strip</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">shell</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#exec_argv">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Executes a command line given as an argv table and either:</p>
+  <ul>
+    <li>
+      raise an exception if return != 0
+    </li>
+    <li>
+      return the output
+    </li>
+  </ul>
+  <p>If strip is True, then output lines will be stripped. If shell is 
+  True, the argv must be a string that will be evaluated by the shell, 
+  instead of the argv list.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="list_eth_ips"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">list_eth_ips</span>(<span class="sig-arg">ifnames</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.utils-pysrc.html#list_eth_ips">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>List the IPv4 and IPv6 non-loopback, non link-local addresses (in the 
+  RFC3330 sense, not addresses attached to lo) of a list of ethernet 
+  interfaces from the SIOCGIFADDR struct. If ifname is omitted, list all 
+  IPs of all ifaces excepted for lo.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Mar 19 14:44:43 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

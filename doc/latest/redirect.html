@@ -1,0 +1,38 @@
+<html><head><title>Epydoc Redirect Page</title>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+<!--
+var pages = ["rtslib.tcm.FileIOStorageObject-c", "rtslib.tcm.BlockStorageObject-c", "rtslib.tcm.PSCSIStorageObject-c", "rtslib.tcm.RDMCPStorageObject-c", "rtslib.utils.RTSLibBrokenLink-c", "rtslib.target.NetworkPortal-c", "rtslib.utils.RTSLibNotInCFS-c", "rtslib.target.FabricModule-c", "rtslib.tcm.FileIOBackstore-c", "rtslib.tcm.BlockBackstore-c", "rtslib.tcm.PSCSIBackstore-c", "rtslib.tcm.RDMCPBackstore-c", "rtslib.target.Connection-c", "rtslib.tcm.StorageObject-c", "rtslib.utils.RTSLibError-c", "rtslib.target.MappedLUN-c", "rtslib.target.NodeACL-c", "rtslib.target.Session-c", "rtslib.target.Target-c", "rtslib.tcm.Backstore-c", "rtslib.node.CFSNode-c", "rtslib.root.RTSRoot-c", "rtslib.target.LUN-c", "rtslib.target.TPG-c", "rtslib.target-m", "rtslib.utils-m", "rtslib.node-m", "rtslib.root-m", "rtslib.tcm-m", "rtslib-m"];
+var dottedName = get_anchor();
+if (dottedName) {
+    var target = redirect_url(dottedName);
+    if (target) window.location.replace(target);
+}
+// -->
+</script>
+
+<h3>Epydoc Auto-redirect page</h3>
+
+<p>When javascript is enabled, this page will redirect URLs of
+the form <tt>redirect.html#<i>dotted.name</i></tt> to the
+documentation for the object with the given fully-qualified
+dotted name.</p>
+<p><a id="message"> &nbsp; </a></p>
+
+<script type="text/javascript">
+<!--
+if (dottedName) {
+    var msg = document.getElementById("message");
+    msg.innerHTML = "No documentation found for <tt>"+
+                    dottedName+"</tt>";
+}
+// -->
+</script>
+
+</body>
+</html>

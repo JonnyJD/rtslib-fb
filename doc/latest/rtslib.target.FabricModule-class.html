@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rtslib.target.FabricModule</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rtslib-module.html">Package&nbsp;rtslib</a> ::
+        <a href="rtslib.target-module.html">Module&nbsp;target</a> ::
+        Class&nbsp;FabricModule
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rtslib.target.FabricModule-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== TYPE DESCRIPTION ==================== -->
+<h1 class="epydoc">type FabricModule</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+  object --+    
+           |    
+<a href="rtslib.node.CFSNode-class.html">node.CFSNode</a> --+
+               |
+              <strong class="uidshort">FabricModule</strong>
+</pre>
+
+<hr />
+<p>This is an interface to RTS Target Fabric Modules. It can load/unload 
+  modules, provide information about them and handle the configfs 
+  housekeeping. It uses module configuration files in 
+  /var/target/fabric/*.spec. After instanciation, whether or not the fabric
+  module is loaded and</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Instanciate a FabricModule object, according to the provided name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_check_self" class="summary-sig-name" onclick="show_private();">_check_self</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._check_self">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="has_feature"></a><span class="summary-sig-name">has_feature</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">feature</span>)</span><br />
+      Whether or not this FabricModule has a certain feature.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.has_feature">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_load" class="summary-sig-name" onclick="show_private();">_load</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Attempt to load the target fabric kernel module as defined in the 
+      specfile.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._load">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_parse_spec"></a><span class="summary-sig-name">_parse_spec</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Parses the fabric module spec file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._parse_spec">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_list_targets"></a><span class="summary-sig-name">_list_targets</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._list_targets">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_version"></a><span class="summary-sig-name">_get_version</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._get_version">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_valid_wwn"></a><span class="summary-sig-name">is_valid_wwn</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">wwn</span>)</span><br />
+      Checks whether or not the provided WWN is valid for this fabric 
+      module according to the spec file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.is_valid_wwn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="needs_wwn"></a><span class="summary-sig-name">needs_wwn</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      This fabric requires wwn to be specified when creating a target, it 
+      cannot be autogenerated.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.needs_wwn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_assert_feature"></a><span class="summary-sig-name">_assert_feature</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">feature</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._assert_feature">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clear_discovery_auth_settings"></a><span class="summary-sig-name">clear_discovery_auth_settings</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.clear_discovery_auth_settings">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_discovery_mutual_password"></a><span class="summary-sig-name">_get_discovery_mutual_password</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._get_discovery_mutual_password">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_discovery_mutual_password"></a><span class="summary-sig-name">_set_discovery_mutual_password</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">password</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._set_discovery_mutual_password">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_discovery_mutual_userid"></a><span class="summary-sig-name">_get_discovery_mutual_userid</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._get_discovery_mutual_userid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_discovery_mutual_userid"></a><span class="summary-sig-name">_set_discovery_mutual_userid</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">userid</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._set_discovery_mutual_userid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_discovery_password"></a><span class="summary-sig-name">_get_discovery_password</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._get_discovery_password">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_discovery_password"></a><span class="summary-sig-name">_set_discovery_password</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">password</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._set_discovery_password">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_discovery_userid"></a><span class="summary-sig-name">_get_discovery_userid</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._get_discovery_userid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_discovery_userid"></a><span class="summary-sig-name">_set_discovery_userid</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">userid</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._set_discovery_userid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_discovery_enable_auth"></a><span class="summary-sig-name">_get_discovery_enable_auth</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._get_discovery_enable_auth">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_discovery_enable_auth"></a><span class="summary-sig-name">_set_discovery_enable_auth</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">enable</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._set_discovery_enable_auth">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#setup" class="summary-sig-name">setup</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fm</span>)</span><br />
+      Setup fabricmodule with settings from fm dict.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.setup">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#dump" class="summary-sig-name">dump</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.dump">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
+      <code><a href="rtslib.node.CFSNode-class.html#__str__">__str__</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#delete">delete</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#get_attribute">get_attribute</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#get_parameter">get_parameter</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#list_attributes">list_attributes</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#list_parameters">list_parameters</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#set_attribute">set_attribute</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#set_parameter">set_parameter</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b> (private):
+      <code><a href="rtslib.node.CFSNode-class.html#_create_in_cfs_ine" onclick="show_private();">_create_in_cfs_ine</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#_exists" onclick="show_private();">_exists</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#_get_path" onclick="show_private();">_get_path</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#_is_fresh" onclick="show_private();">_is_fresh</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#_list_files" onclick="show_private();">_list_files</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="version_attributes"></a><span class="summary-name">version_attributes</span> = <code title="set(['lio_version', 'version'])"><code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">lio_version</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">version</code><code class="variable-quote">'</code><code class="variable-group">])</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="discovery_auth_attributes"></a><span class="summary-name">discovery_auth_attributes</span> = <code title="set(['discovery_auth'])"><code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">discovery_auth</code><code class="variable-quote">'</code><code class="variable-group">])</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#target_names_excludes" class="summary-name">target_names_excludes</a> = <code title="set(['discovery_auth', 'lio_version', 'version'])"><code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">discovery_auth</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lio_version</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
+      <code><a href="rtslib.node.CFSNode-class.html#alua_metadata_dir">alua_metadata_dir</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#configfs_dir">configfs_dir</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#spec_dir">spec_dir</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#discovery_userid" class="summary-name">discovery_userid</a><br />
+      Set or get the initiator discovery userid.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#discovery_password" class="summary-name">discovery_password</a><br />
+      Set or get the initiator discovery password.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#discovery_mutual_userid" class="summary-name">discovery_mutual_userid</a><br />
+      Set or get the mutual discovery userid.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#discovery_mutual_password" class="summary-name">discovery_mutual_password</a><br />
+      Set or get the mutual discovery password.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#discovery_enable_auth" class="summary-name">discovery_enable_auth</a><br />
+      Set or get the discovery enable_auth flag.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#targets" class="summary-name">targets</a><br />
+      Get the list of target objects.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.FabricModule-class.html#version" class="summary-name">version</a><br />
+      Get the fabric module version string.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
+      <code><a href="rtslib.node.CFSNode-class.html#exists">exists</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#is_fresh">is_fresh</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#path">path</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Instanciate a FabricModule object, according to the provided name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (str) - the name of the FabricModule object. It must match an existing 
+          target fabric module specfile (name.spec).</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="rtslib.node.CFSNode-class.html#__init__">node.CFSNode.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_check_self"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_check_self</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._check_self">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="rtslib.node.CFSNode-class.html#_check_self" onclick="show_private();">node.CFSNode._check_self</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_load"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_load</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule._load">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Attempt to load the target fabric kernel module as defined in the 
+  specfile.</p>
+  <dl class="fields">
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'><a href="rtslib.utils.RTSLibError-class.html">RTSLibError</a></strong></code> - For failure to load kernel module and/or create configfs group.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setup"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setup</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">fm</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.setup">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Setup fabricmodule with settings from fm dict. Returns int of how many
+  nonfatal errors were encountered</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dump"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dump</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.target-pysrc.html#FabricModule.dump">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="rtslib.node.CFSNode-class.html#dump">node.CFSNode.dump</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="target_names_excludes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">target_names_excludes</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">discovery_auth</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lio_version</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">version</code><code class="variable-quote">'</code><code class="variable-group">])</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="discovery_userid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">discovery_userid</h3>
+  <p>Set or get the initiator discovery userid.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_get_discovery_userid" class="summary-sig-name" onclick="show_private();">_get_discovery_userid</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_set_discovery_userid" class="summary-sig-name" onclick="show_private();">_set_discovery_userid</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">userid</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="discovery_password"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">discovery_password</h3>
+  <p>Set or get the initiator discovery password.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_get_discovery_password" class="summary-sig-name" onclick="show_private();">_get_discovery_password</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_set_discovery_password" class="summary-sig-name" onclick="show_private();">_set_discovery_password</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">password</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="discovery_mutual_userid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">discovery_mutual_userid</h3>
+  <p>Set or get the mutual discovery userid.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_get_discovery_mutual_userid" class="summary-sig-name" onclick="show_private();">_get_discovery_mutual_userid</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_set_discovery_mutual_userid" class="summary-sig-name" onclick="show_private();">_set_discovery_mutual_userid</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">userid</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="discovery_mutual_password"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">discovery_mutual_password</h3>
+  <p>Set or get the mutual discovery password.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_get_discovery_mutual_password" class="summary-sig-name" onclick="show_private();">_get_discovery_mutual_password</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_set_discovery_mutual_password" class="summary-sig-name" onclick="show_private();">_set_discovery_mutual_password</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">password</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="discovery_enable_auth"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">discovery_enable_auth</h3>
+  <p>Set or get the discovery enable_auth flag.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_get_discovery_enable_auth" class="summary-sig-name" onclick="show_private();">_get_discovery_enable_auth</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_set_discovery_enable_auth" class="summary-sig-name" onclick="show_private();">_set_discovery_enable_auth</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">enable</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="targets"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">targets</h3>
+  <p>Get the list of target objects.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_list_targets" class="summary-sig-name" onclick="show_private();">_list_targets</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="version"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">version</h3>
+  <p>Get the fabric module version string.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.FabricModule-class.html#_get_version" class="summary-sig-name" onclick="show_private();">_get_version</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Mar 19 14:44:43 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

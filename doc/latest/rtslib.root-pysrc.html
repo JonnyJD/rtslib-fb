@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rtslib.root</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rtslib-module.html">Package&nbsp;rtslib</a> ::
+        Module&nbsp;root
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rtslib.root-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="rtslib.root-module.html">Module rtslib.root</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">Implements the RTSRoot class.</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">This file is part of RTSLib Community Edition.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">Copyright (c) 2011 by RisingTide Systems LLC</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">This program is free software: you can redistribute it and/or modify</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">it under the terms of the GNU Affero General Public License as</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">published by the Free Software Foundation, version 3 (AGPLv3).</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">This program is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring">but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">GNU Affero General Public License for more details.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">You should have received a copy of the GNU Affero General Public License</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">re</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">glob</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module rtslib.node=rtslib.node-module.html"><a title="rtslib.node" class="py-name" href="#" onclick="return doclink('link-0', 'node', 'link-0');">node</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class rtslib.node.CFSNode=rtslib.node.CFSNode-class.html"><a title="rtslib.node.CFSNode" class="py-name" href="#" onclick="return doclink('link-1', 'CFSNode', 'link-1');">CFSNode</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module rtslib.target=rtslib.target-module.html"><a title="rtslib.target" class="py-name" href="#" onclick="return doclink('link-2', 'target', 'link-2');">target</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class rtslib.target.Target=rtslib.target.Target-class.html"><a title="rtslib.target.Target" class="py-name" href="#" onclick="return doclink('link-3', 'Target', 'link-3');">Target</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class rtslib.target.FabricModule=rtslib.target.FabricModule-class.html"><a title="rtslib.target.FabricModule" class="py-name" href="#" onclick="return doclink('link-4', 'FabricModule', 'link-4');">FabricModule</a></tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name" targets="Module rtslib.tcm=rtslib.tcm-module.html"><a title="rtslib.tcm" class="py-name" href="#" onclick="return doclink('link-5', 'tcm', 'link-5');">tcm</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Class rtslib.tcm.FileIOBackstore=rtslib.tcm.FileIOBackstore-class.html"><a title="rtslib.tcm.FileIOBackstore" class="py-name" href="#" onclick="return doclink('link-6', 'FileIOBackstore', 'link-6');">FileIOBackstore</a></tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name" targets="Class rtslib.tcm.BlockBackstore=rtslib.tcm.BlockBackstore-class.html"><a title="rtslib.tcm.BlockBackstore" class="py-name" href="#" onclick="return doclink('link-7', 'BlockBackstore', 'link-7');">BlockBackstore</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="rtslib.tcm" class="py-name" href="#" onclick="return doclink('link-8', 'tcm', 'link-5');">tcm</a></tt> <tt class="py-keyword">import</tt> <tt id="link-9" class="py-name" targets="Class rtslib.tcm.PSCSIBackstore=rtslib.tcm.PSCSIBackstore-class.html"><a title="rtslib.tcm.PSCSIBackstore" class="py-name" href="#" onclick="return doclink('link-9', 'PSCSIBackstore', 'link-9');">PSCSIBackstore</a></tt><tt class="py-op">,</tt> <tt id="link-10" class="py-name" targets="Class rtslib.tcm.RDMCPBackstore=rtslib.tcm.RDMCPBackstore-class.html"><a title="rtslib.tcm.RDMCPBackstore" class="py-name" href="#" onclick="return doclink('link-10', 'RDMCPBackstore', 'link-10');">RDMCPBackstore</a></tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-11" class="py-name" targets="Module rtslib.utils=rtslib.utils-module.html"><a title="rtslib.utils" class="py-name" href="#" onclick="return doclink('link-11', 'utils', 'link-11');">utils</a></tt> <tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Class rtslib.utils.RTSLibError=rtslib.utils.RTSLibError-class.html"><a title="rtslib.utils.RTSLibError" class="py-name" href="#" onclick="return doclink('link-12', 'RTSLibError', 'link-12');">RTSLibError</a></tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name" targets="Class rtslib.utils.RTSLibBrokenLink=rtslib.utils.RTSLibBrokenLink-class.html"><a title="rtslib.utils.RTSLibBrokenLink" class="py-name" href="#" onclick="return doclink('link-13', 'RTSLibBrokenLink', 'link-13');">RTSLibBrokenLink</a></tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name" targets="Function rtslib.utils.modprobe()=rtslib.utils-module.html#modprobe"><a title="rtslib.utils.modprobe" class="py-name" href="#" onclick="return doclink('link-14', 'modprobe', 'link-14');">modprobe</a></tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable rtslib.root.RTSRoot.backstores=rtslib.root.RTSRoot-class.html#backstores,Variable rtslib.root.backstores=rtslib.root-module.html#backstores"><a title="rtslib.root.RTSRoot.backstores
+rtslib.root.backstores" class="py-name" href="#" onclick="return doclink('link-15', 'backstores', 'link-15');">backstores</a></tt> <tt class="py-op">=</tt> <tt class="py-name">dict</tt><tt class="py-op">(</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-name">fileio</tt><tt class="py-op">=</tt><tt id="link-16" class="py-name"><a title="rtslib.tcm.FileIOBackstore" class="py-name" href="#" onclick="return doclink('link-16', 'FileIOBackstore', 'link-6');">FileIOBackstore</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">    <tt class="py-name">block</tt><tt class="py-op">=</tt><tt id="link-17" class="py-name"><a title="rtslib.tcm.BlockBackstore" class="py-name" href="#" onclick="return doclink('link-17', 'BlockBackstore', 'link-7');">BlockBackstore</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">    <tt class="py-name">pscsi</tt><tt class="py-op">=</tt><tt id="link-18" class="py-name"><a title="rtslib.tcm.PSCSIBackstore" class="py-name" href="#" onclick="return doclink('link-18', 'PSCSIBackstore', 'link-9');">PSCSIBackstore</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt class="py-name">ramdisk</tt><tt class="py-op">=</tt><tt id="link-19" class="py-name"><a title="rtslib.tcm.RDMCPBackstore" class="py-name" href="#" onclick="return doclink('link-19', 'RDMCPBackstore', 'link-10');">RDMCPBackstore</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot"></a><div id="RTSRoot-def"><a name="L37"></a><tt class="py-lineno"> 37</tt> <a class="py-toggle" href="#" id="RTSRoot-toggle" onclick="return toggle('RTSRoot');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html">RTSRoot</a><tt class="py-op">(</tt><tt class="py-base-class">CFSNode</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="RTSRoot-expanded"><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">    This is an interface to the root of the configFS object tree.</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">    Is allows one to start browsing Target and Backstore objects,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">    as well as helper methods to return arbitrary objects from the</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">    configFS tree.</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; import rtslib.root as root</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot = root.RTSRoot()</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.path</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">    '/sys/kernel/config/target'</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.exists</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">    True</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.targets # doctest: +ELLIPSIS</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">    [...]</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.backstores # doctest: +ELLIPSIS</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    [...]</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.tpgs # doctest: +ELLIPSIS</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">    [...]</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.storage_objects # doctest: +ELLIPSIS</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    [...]</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    &gt;&gt;&gt; rtsroot.network_portals # doctest: +ELLIPSIS</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    [...]</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-comment"># The core target/tcm kernel module</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt id="link-20" class="py-name" targets="Variable rtslib.root.RTSRoot.target_core_mod=rtslib.root.RTSRoot-class.html#target_core_mod"><a title="rtslib.root.RTSRoot.target_core_mod" class="py-name" href="#" onclick="return doclink('link-20', 'target_core_mod', 'link-20');">target_core_mod</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'target_core_mod'</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-comment"># RTSRoot private stuff</tt> </tt>
+<a name="RTSRoot.__init__"></a><div id="RTSRoot.__init__-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="RTSRoot.__init__-toggle" onclick="return toggle('RTSRoot.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot.__init__-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">        Instanciate an RTSRoot object. Basically checks for configfs setup and</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        base kernel modules (tcm )</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-21" class="py-name" targets="Class rtslib.root.RTSRoot=rtslib.root.RTSRoot-class.html"><a title="rtslib.root.RTSRoot" class="py-name" href="#" onclick="return doclink('link-21', 'RTSRoot', 'link-21');">RTSRoot</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method rtslib.node.CFSNode.__init__()=rtslib.node.CFSNode-class.html#__init__,Method rtslib.root.RTSRoot.__init__()=rtslib.root.RTSRoot-class.html#__init__,Method rtslib.target.Connection.__init__()=rtslib.target.Connection-class.html#__init__,Method rtslib.target.FabricModule.__init__()=rtslib.target.FabricModule-class.html#__init__,Method rtslib.target.LUN.__init__()=rtslib.target.LUN-class.html#__init__,Method rtslib.target.MappedLUN.__init__()=rtslib.target.MappedLUN-class.html#__init__,Method rtslib.target.NetworkPortal.__init__()=rtslib.target.NetworkPortal-class.html#__init__,Method rtslib.target.NodeACL.__init__()=rtslib.target.NodeACL-class.html#__init__,Method rtslib.target.Session.__init__()=rtslib.target.Session-class.html#__init__,Method rtslib.target.TPG.__init__()=rtslib.target.TPG-class.html#__init__,Method rtslib.target.Target.__init__()=rtslib.target.Target-class.html#__init__,Method rtslib.tcm.Backstore.__init__()=rtslib.tcm.Backstore-class.html#__init__,Method rtslib.tcm.BlockBackstore.__init__()=rtslib.tcm.BlockBackstore-class.html#__init__,Method rtslib.tcm.BlockStorageObject.__init__()=rtslib.tcm.BlockStorageObject-class.html#__init__,Method rtslib.tcm.FileIOBackstore.__init__()=rtslib.tcm.FileIOBackstore-class.html#__init__,Method rtslib.tcm.FileIOStorageObject.__init__()=rtslib.tcm.FileIOStorageObject-class.html#__init__,Method rtslib.tcm.PSCSIBackstore.__init__()=rtslib.tcm.PSCSIBackstore-class.html#__init__,Method rtslib.tcm.PSCSIStorageObject.__init__()=rtslib.tcm.PSCSIStorageObject-class.html#__init__,Method rtslib.tcm.RDMCPBackstore.__init__()=rtslib.tcm.RDMCPBackstore-class.html#__init__,Method rtslib.tcm.RDMCPStorageObject.__init__()=rtslib.tcm.RDMCPStorageObject-class.html#__init__,Method rtslib.tcm.StorageObject.__init__()=rtslib.tcm.StorageObject-class.html#__init__"><a title="rtslib.node.CFSNode.__init__
+rtslib.root.RTSRoot.__init__
+rtslib.target.Connection.__init__
+rtslib.target.FabricModule.__init__
+rtslib.target.LUN.__init__
+rtslib.target.MappedLUN.__init__
+rtslib.target.NetworkPortal.__init__
+rtslib.target.NodeACL.__init__
+rtslib.target.Session.__init__
+rtslib.target.TPG.__init__
+rtslib.target.Target.__init__
+rtslib.tcm.Backstore.__init__
+rtslib.tcm.BlockBackstore.__init__
+rtslib.tcm.BlockStorageObject.__init__
+rtslib.tcm.FileIOBackstore.__init__
+rtslib.tcm.FileIOStorageObject.__init__
+rtslib.tcm.PSCSIBackstore.__init__
+rtslib.tcm.PSCSIStorageObject.__init__
+rtslib.tcm.RDMCPBackstore.__init__
+rtslib.tcm.RDMCPStorageObject.__init__
+rtslib.tcm.StorageObject.__init__" class="py-name" href="#" onclick="return doclink('link-22', '__init__', 'link-22');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt id="link-23" class="py-name"><a title="rtslib.utils.modprobe" class="py-name" href="#" onclick="return doclink('link-23', 'modprobe', 'link-14');">modprobe</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="rtslib.root.RTSRoot.target_core_mod" class="py-name" href="#" onclick="return doclink('link-24', 'target_core_mod', 'link-20');">target_core_mod</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Method rtslib.node.CFSNode._create_in_cfs_ine()=rtslib.node.CFSNode-class.html#_create_in_cfs_ine,Method rtslib.target.LUN._create_in_cfs_ine()=rtslib.target.LUN-class.html#_create_in_cfs_ine,Method rtslib.target.TPG._create_in_cfs_ine()=rtslib.target.TPG-class.html#_create_in_cfs_ine,Method rtslib.tcm.Backstore._create_in_cfs_ine()=rtslib.tcm.Backstore-class.html#_create_in_cfs_ine,Method rtslib.tcm.PSCSIBackstore._create_in_cfs_ine()=rtslib.tcm.PSCSIBackstore-class.html#_create_in_cfs_ine"><a title="rtslib.node.CFSNode._create_in_cfs_ine
+rtslib.target.LUN._create_in_cfs_ine
+rtslib.target.TPG._create_in_cfs_ine
+rtslib.tcm.Backstore._create_in_cfs_ine
+rtslib.tcm.PSCSIBackstore._create_in_cfs_ine" class="py-name" href="#" onclick="return doclink('link-25', '_create_in_cfs_ine', 'link-25');">_create_in_cfs_ine</a></tt><tt class="py-op">(</tt><tt class="py-string">'any'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_targets"></a><div id="RTSRoot._list_targets-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="RTSRoot._list_targets-toggle" onclick="return toggle('RTSRoot._list_targets');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_targets">_list_targets</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_targets-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_targets-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method rtslib.node.CFSNode._check_self()=rtslib.node.CFSNode-class.html#_check_self,Method rtslib.target.FabricModule._check_self()=rtslib.target.FabricModule-class.html#_check_self"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-26', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt id="link-27" class="py-name" targets="Variable rtslib.root.RTSRoot.targets=rtslib.root.RTSRoot-class.html#targets,Variable rtslib.target.FabricModule.targets=rtslib.target.FabricModule-class.html#targets"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-27', 'targets', 'link-27');">targets</a></tt> <tt class="py-op">=</tt> <tt class="py-name">set</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">fabric_module</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable rtslib.root.RTSRoot.fabric_modules=rtslib.root.RTSRoot-class.html#fabric_modules"><a title="rtslib.root.RTSRoot.fabric_modules" class="py-name" href="#" onclick="return doclink('link-28', 'fabric_modules', 'link-28');">fabric_modules</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt id="link-29" class="py-name"><a title="rtslib.target" class="py-name" href="#" onclick="return doclink('link-29', 'target', 'link-2');">target</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">fabric_module</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-30', 'targets', 'link-27');">targets</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt id="link-31" class="py-name"><a title="rtslib.target" class="py-name" href="#" onclick="return doclink('link-31', 'target', 'link-2');">target</a></tt> </tt>
+</div><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_backstores"></a><div id="RTSRoot._list_backstores-def"><a name="L83"></a><tt class="py-lineno"> 83</tt> <a class="py-toggle" href="#" id="RTSRoot._list_backstores-toggle" onclick="return toggle('RTSRoot._list_backstores');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_backstores">_list_backstores</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_backstores-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_backstores-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-32', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Variable rtslib.node.CFSNode.path=rtslib.node.CFSNode-class.html#path"><a title="rtslib.node.CFSNode.path" class="py-name" href="#" onclick="return doclink('link-33', 'path', 'link-33');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt><tt class="py-op">(</tt><tt class="py-string">"%s/core"</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="rtslib.node.CFSNode.path" class="py-name" href="#" onclick="return doclink('link-34', 'path', 'link-33');">path</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-name">backstore_dirs</tt> <tt class="py-op">=</tt> <tt class="py-name">glob</tt><tt class="py-op">.</tt><tt class="py-name">glob</tt><tt class="py-op">(</tt><tt class="py-string">"%s/core/*_*"</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="rtslib.node.CFSNode.path" class="py-name" href="#" onclick="return doclink('link-35', 'path', 'link-33');">path</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">backstore_dir</tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="rtslib.node.CFSNode.path" class="py-name" href="#" onclick="return doclink('link-36', 'path', 'link-33');">path</a></tt><tt class="py-op">.</tt><tt class="py-name">basename</tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="rtslib.node.CFSNode.path" class="py-name" href="#" onclick="return doclink('link-37', 'path', 'link-33');">path</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                                  <tt class="py-keyword">for</tt> <tt id="link-38" class="py-name"><a title="rtslib.node.CFSNode.path" class="py-name" href="#" onclick="return doclink('link-38', 'path', 'link-33');">path</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">backstore_dirs</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-name">regex</tt> <tt class="py-op">=</tt> <tt class="py-name">re</tt><tt class="py-op">.</tt><tt class="py-name">search</tt><tt class="py-op">(</tt><tt class="py-string">"([a-z]+[_]*[a-z]+)(_)([0-9]+)"</tt><tt class="py-op">,</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                                  <tt class="py-name">backstore_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">regex</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-string">"fileio"</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                        <tt class="py-keyword">yield</tt> <tt id="link-39" class="py-name"><a title="rtslib.tcm.FileIOBackstore" class="py-name" href="#" onclick="return doclink('link-39', 'FileIOBackstore', 'link-6');">FileIOBackstore</a></tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'lookup'</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                    <tt class="py-keyword">elif</tt> <tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-string">"pscsi"</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                        <tt class="py-keyword">yield</tt> <tt id="link-40" class="py-name"><a title="rtslib.tcm.PSCSIBackstore" class="py-name" href="#" onclick="return doclink('link-40', 'PSCSIBackstore', 'link-9');">PSCSIBackstore</a></tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'lookup'</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                    <tt class="py-keyword">elif</tt> <tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-string">"iblock"</tt><tt class="py-op">:</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                        <tt class="py-keyword">yield</tt> <tt id="link-41" class="py-name"><a title="rtslib.tcm.BlockBackstore" class="py-name" href="#" onclick="return doclink('link-41', 'BlockBackstore', 'link-7');">BlockBackstore</a></tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'lookup'</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                    <tt class="py-keyword">elif</tt> <tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-string">"rd_mcp"</tt><tt class="py-op">:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                        <tt class="py-keyword">yield</tt> <tt id="link-42" class="py-name"><a title="rtslib.tcm.RDMCPBackstore" class="py-name" href="#" onclick="return doclink('link-42', 'RDMCPBackstore', 'link-10');">RDMCPBackstore</a></tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">regex</tt><tt class="py-op">.</tt><tt class="py-name">group</tt><tt class="py-op">(</tt><tt class="py-number">3</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'lookup'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_storage_objects"></a><div id="RTSRoot._list_storage_objects-def"><a name="L101"></a><tt class="py-lineno">101</tt> <a class="py-toggle" href="#" id="RTSRoot._list_storage_objects-toggle" onclick="return toggle('RTSRoot._list_storage_objects');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_storage_objects">_list_storage_objects</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_storage_objects-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_storage_objects-expanded"><a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-43', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">bs</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="rtslib.root.RTSRoot.backstores
+rtslib.root.backstores" class="py-name" href="#" onclick="return doclink('link-44', 'backstores', 'link-15');">backstores</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">so</tt> <tt class="py-keyword">in</tt> <tt class="py-name">bs</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Variable rtslib.root.RTSRoot.storage_objects=rtslib.root.RTSRoot-class.html#storage_objects,Variable rtslib.tcm.Backstore.storage_objects=rtslib.tcm.Backstore-class.html#storage_objects"><a title="rtslib.root.RTSRoot.storage_objects
+rtslib.tcm.Backstore.storage_objects" class="py-name" href="#" onclick="return doclink('link-45', 'storage_objects', 'link-45');">storage_objects</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt class="py-name">so</tt> </tt>
+</div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_tpgs"></a><div id="RTSRoot._list_tpgs-def"><a name="L107"></a><tt class="py-lineno">107</tt> <a class="py-toggle" href="#" id="RTSRoot._list_tpgs-toggle" onclick="return toggle('RTSRoot._list_tpgs');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_tpgs">_list_tpgs</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_tpgs-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_tpgs-expanded"><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-46', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-47', 'targets', 'link-27');">targets</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">tpg</tt> <tt class="py-keyword">in</tt> <tt class="py-name">t</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Variable rtslib.root.RTSRoot.tpgs=rtslib.root.RTSRoot-class.html#tpgs,Variable rtslib.target.Target.tpgs=rtslib.target.Target-class.html#tpgs"><a title="rtslib.root.RTSRoot.tpgs
+rtslib.target.Target.tpgs" class="py-name" href="#" onclick="return doclink('link-48', 'tpgs', 'link-48');">tpgs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt class="py-name">tpg</tt> </tt>
+</div><a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_node_acls"></a><div id="RTSRoot._list_node_acls-def"><a name="L113"></a><tt class="py-lineno">113</tt> <a class="py-toggle" href="#" id="RTSRoot._list_node_acls-toggle" onclick="return toggle('RTSRoot._list_node_acls');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_node_acls">_list_node_acls</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_node_acls-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_node_acls-expanded"><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-49', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="rtslib.root.RTSRoot.tpgs
+rtslib.target.Target.tpgs" class="py-name" href="#" onclick="return doclink('link-50', 'tpgs', 'link-48');">tpgs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt id="link-51" class="py-name" targets="Method rtslib.target.TPG.node_acl()=rtslib.target.TPG-class.html#node_acl"><a title="rtslib.target.TPG.node_acl" class="py-name" href="#" onclick="return doclink('link-51', 'node_acl', 'link-51');">node_acl</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">t</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Variable rtslib.root.RTSRoot.node_acls=rtslib.root.RTSRoot-class.html#node_acls,Variable rtslib.target.TPG.node_acls=rtslib.target.TPG-class.html#node_acls"><a title="rtslib.root.RTSRoot.node_acls
+rtslib.target.TPG.node_acls" class="py-name" href="#" onclick="return doclink('link-52', 'node_acls', 'link-52');">node_acls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt id="link-53" class="py-name"><a title="rtslib.target.TPG.node_acl" class="py-name" href="#" onclick="return doclink('link-53', 'node_acl', 'link-51');">node_acl</a></tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_network_portals"></a><div id="RTSRoot._list_network_portals-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="RTSRoot._list_network_portals-toggle" onclick="return toggle('RTSRoot._list_network_portals');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_network_portals">_list_network_portals</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_network_portals-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_network_portals-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-54', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="rtslib.root.RTSRoot.tpgs
+rtslib.target.Target.tpgs" class="py-name" href="#" onclick="return doclink('link-55', 'tpgs', 'link-48');">tpgs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-name">t</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Variable rtslib.root.RTSRoot.network_portals=rtslib.root.RTSRoot-class.html#network_portals,Variable rtslib.target.TPG.network_portals=rtslib.target.TPG-class.html#network_portals"><a title="rtslib.root.RTSRoot.network_portals
+rtslib.target.TPG.network_portals" class="py-name" href="#" onclick="return doclink('link-56', 'network_portals', 'link-56');">network_portals</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt class="py-name">p</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_luns"></a><div id="RTSRoot._list_luns-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="RTSRoot._list_luns-toggle" onclick="return toggle('RTSRoot._list_luns');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_luns">_list_luns</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_luns-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_luns-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-57', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="rtslib.root.RTSRoot.tpgs
+rtslib.target.Target.tpgs" class="py-name" href="#" onclick="return doclink('link-58', 'tpgs', 'link-48');">tpgs</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt id="link-59" class="py-name" targets="Variable rtslib.target.LUN.lun=rtslib.target.LUN-class.html#lun,Method rtslib.target.TPG.lun()=rtslib.target.TPG-class.html#lun,Variable rtslib.tcm.PSCSIStorageObject.lun=rtslib.tcm.PSCSIStorageObject-class.html#lun"><a title="rtslib.target.LUN.lun
+rtslib.target.TPG.lun
+rtslib.tcm.PSCSIStorageObject.lun" class="py-name" href="#" onclick="return doclink('link-59', 'lun', 'link-59');">lun</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">t</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name" targets="Variable rtslib.root.RTSRoot.luns=rtslib.root.RTSRoot-class.html#luns,Variable rtslib.target.TPG.luns=rtslib.target.TPG-class.html#luns"><a title="rtslib.root.RTSRoot.luns
+rtslib.target.TPG.luns" class="py-name" href="#" onclick="return doclink('link-60', 'luns', 'link-60');">luns</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt id="link-61" class="py-name"><a title="rtslib.target.LUN.lun
+rtslib.target.TPG.lun
+rtslib.tcm.PSCSIStorageObject.lun" class="py-name" href="#" onclick="return doclink('link-61', 'lun', 'link-59');">lun</a></tt> </tt>
+</div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_sessions"></a><div id="RTSRoot._list_sessions-def"><a name="L131"></a><tt class="py-lineno">131</tt> <a class="py-toggle" href="#" id="RTSRoot._list_sessions-toggle" onclick="return toggle('RTSRoot._list_sessions');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_sessions">_list_sessions</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_sessions-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_sessions-expanded"><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-62', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">na</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="rtslib.root.RTSRoot.node_acls
+rtslib.target.TPG.node_acls" class="py-name" href="#" onclick="return doclink('link-63', 'node_acls', 'link-52');">node_acls</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">na</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Variable rtslib.target.NodeACL.session=rtslib.target.NodeACL-class.html#session"><a title="rtslib.target.NodeACL.session" class="py-name" href="#" onclick="return doclink('link-64', 'session', 'link-64');">session</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                <tt class="py-keyword">yield</tt> <tt class="py-name">na</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="rtslib.target.NodeACL.session" class="py-name" href="#" onclick="return doclink('link-65', 'session', 'link-64');">session</a></tt> </tt>
+</div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot._list_fabric_modules"></a><div id="RTSRoot._list_fabric_modules-def"><a name="L137"></a><tt class="py-lineno">137</tt> <a class="py-toggle" href="#" id="RTSRoot._list_fabric_modules-toggle" onclick="return toggle('RTSRoot._list_fabric_modules');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#_list_fabric_modules">_list_fabric_modules</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot._list_fabric_modules-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot._list_fabric_modules-expanded"><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="rtslib.node.CFSNode._check_self
+rtslib.target.FabricModule._check_self" class="py-name" href="#" onclick="return doclink('link-66', '_check_self', 'link-26');">_check_self</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-name">mod_names</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">mod_name</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">5</tt><tt class="py-op">]</tt> <tt class="py-keyword">for</tt> <tt class="py-name">mod_name</tt> <tt class="py-keyword">in</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">listdir</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name" targets="Variable rtslib.node.CFSNode.spec_dir=rtslib.node.CFSNode-class.html#spec_dir"><a title="rtslib.node.CFSNode.spec_dir" class="py-name" href="#" onclick="return doclink('link-67', 'spec_dir', 'link-67');">spec_dir</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">                     <tt class="py-keyword">if</tt> <tt class="py-name">mod_name</tt><tt class="py-op">.</tt><tt class="py-name">endswith</tt><tt class="py-op">(</tt><tt class="py-string">'.spec'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-68" class="py-name" targets="Variable rtslib.tcm.Backstore.name=rtslib.tcm.Backstore-class.html#name,Variable rtslib.tcm.StorageObject.name=rtslib.tcm.StorageObject-class.html#name"><a title="rtslib.tcm.Backstore.name
+rtslib.tcm.StorageObject.name" class="py-name" href="#" onclick="return doclink('link-68', 'name', 'link-68');">name</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">mod_names</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">            <tt class="py-keyword">yield</tt> <tt id="link-69" class="py-name"><a title="rtslib.target.FabricModule" class="py-name" href="#" onclick="return doclink('link-69', 'FabricModule', 'link-4');">FabricModule</a></tt><tt class="py-op">(</tt><tt id="link-70" class="py-name"><a title="rtslib.tcm.Backstore.name
+rtslib.tcm.StorageObject.name" class="py-name" href="#" onclick="return doclink('link-70', 'name', 'link-68');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot.__str__"></a><div id="RTSRoot.__str__-def"><a name="L144"></a><tt class="py-lineno">144</tt> <a class="py-toggle" href="#" id="RTSRoot.__str__-toggle" onclick="return toggle('RTSRoot.__str__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#__str__">__str__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot.__str__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot.__str__-expanded"><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"rtslib"</tt> </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">    <tt class="py-comment"># RTSRoot public stuff</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot.dump"></a><div id="RTSRoot.dump-def"><a name="L149"></a><tt class="py-lineno">149</tt> <a class="py-toggle" href="#" id="RTSRoot.dump-toggle" onclick="return toggle('RTSRoot.dump');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#dump">dump</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot.dump-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot.dump-expanded"><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">        Returns a dict representing the complete state of the target</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">        config, suitable for serialization/deserialization, and then</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">        handing to restore().</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">d</tt> <tt class="py-op">=</tt> <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-71" class="py-name"><a title="rtslib.root.RTSRoot" class="py-name" href="#" onclick="return doclink('link-71', 'RTSRoot', 'link-21');">RTSRoot</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Method rtslib.node.CFSNode.dump()=rtslib.node.CFSNode-class.html#dump,Method rtslib.root.RTSRoot.dump()=rtslib.root.RTSRoot-class.html#dump,Method rtslib.target.FabricModule.dump()=rtslib.target.FabricModule-class.html#dump,Method rtslib.target.LUN.dump()=rtslib.target.LUN-class.html#dump,Method rtslib.target.MappedLUN.dump()=rtslib.target.MappedLUN-class.html#dump,Method rtslib.target.NetworkPortal.dump()=rtslib.target.NetworkPortal-class.html#dump,Method rtslib.target.NodeACL.dump()=rtslib.target.NodeACL-class.html#dump,Method rtslib.target.TPG.dump()=rtslib.target.TPG-class.html#dump,Method rtslib.target.Target.dump()=rtslib.target.Target-class.html#dump,Method rtslib.tcm.Backstore.dump()=rtslib.tcm.Backstore-class.html#dump,Method rtslib.tcm.BlockStorageObject.dump()=rtslib.tcm.BlockStorageObject-class.html#dump,Method rtslib.tcm.FileIOStorageObject.dump()=rtslib.tcm.FileIOStorageObject-class.html#dump,Method rtslib.tcm.PSCSIBackstore.dump()=rtslib.tcm.PSCSIBackstore-class.html#dump,Method rtslib.tcm.RDMCPStorageObject.dump()=rtslib.tcm.RDMCPStorageObject-class.html#dump,Method rtslib.tcm.StorageObject.dump()=rtslib.tcm.StorageObject-class.html#dump"><a title="rtslib.node.CFSNode.dump
+rtslib.root.RTSRoot.dump
+rtslib.target.FabricModule.dump
+rtslib.target.LUN.dump
+rtslib.target.MappedLUN.dump
+rtslib.target.NetworkPortal.dump
+rtslib.target.NodeACL.dump
+rtslib.target.TPG.dump
+rtslib.target.Target.dump
+rtslib.tcm.Backstore.dump
+rtslib.tcm.BlockStorageObject.dump
+rtslib.tcm.FileIOStorageObject.dump
+rtslib.tcm.PSCSIBackstore.dump
+rtslib.tcm.RDMCPStorageObject.dump
+rtslib.tcm.StorageObject.dump" class="py-name" href="#" onclick="return doclink('link-72', 'dump', 'link-72');">dump</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-comment"># backstores:storage_object is *usually* 1:1. In any case, they're an</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-comment"># implementation detail that the user doesn't need to care about.</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-comment"># Return an array of storageobject info with the crucial plugin name</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-comment"># added from backstore, instead of a list of sos for each bs.</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">d</tt><tt class="py-op">[</tt><tt class="py-string">'storage_objects'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">bs</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name"><a title="rtslib.root.RTSRoot.backstores
+rtslib.root.backstores" class="py-name" href="#" onclick="return doclink('link-73', 'backstores', 'link-15');">backstores</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">so</tt> <tt class="py-keyword">in</tt> <tt class="py-name">bs</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="rtslib.root.RTSRoot.storage_objects
+rtslib.tcm.Backstore.storage_objects" class="py-name" href="#" onclick="return doclink('link-74', 'storage_objects', 'link-45');">storage_objects</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">                <tt class="py-name">so_dump</tt> <tt class="py-op">=</tt> <tt class="py-name">so</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="rtslib.node.CFSNode.dump
+rtslib.root.RTSRoot.dump
+rtslib.target.FabricModule.dump
+rtslib.target.LUN.dump
+rtslib.target.MappedLUN.dump
+rtslib.target.NetworkPortal.dump
+rtslib.target.NodeACL.dump
+rtslib.target.TPG.dump
+rtslib.target.Target.dump
+rtslib.tcm.Backstore.dump
+rtslib.tcm.BlockStorageObject.dump
+rtslib.tcm.FileIOStorageObject.dump
+rtslib.tcm.PSCSIBackstore.dump
+rtslib.tcm.RDMCPStorageObject.dump
+rtslib.tcm.StorageObject.dump" class="py-name" href="#" onclick="return doclink('link-75', 'dump', 'link-72');">dump</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                <tt class="py-name">so_dump</tt><tt class="py-op">[</tt><tt class="py-string">'plugin'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">bs</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name" targets="Variable rtslib.tcm.Backstore.plugin=rtslib.tcm.Backstore-class.html#plugin"><a title="rtslib.tcm.Backstore.plugin" class="py-name" href="#" onclick="return doclink('link-76', 'plugin', 'link-76');">plugin</a></tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">                <tt class="py-name">d</tt><tt class="py-op">[</tt><tt class="py-string">'storage_objects'</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">so_dump</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-name">d</tt><tt class="py-op">[</tt><tt class="py-string">'targets'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">t</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="rtslib.node.CFSNode.dump
+rtslib.root.RTSRoot.dump
+rtslib.target.FabricModule.dump
+rtslib.target.LUN.dump
+rtslib.target.MappedLUN.dump
+rtslib.target.NetworkPortal.dump
+rtslib.target.NodeACL.dump
+rtslib.target.TPG.dump
+rtslib.target.Target.dump
+rtslib.tcm.Backstore.dump
+rtslib.tcm.BlockStorageObject.dump
+rtslib.tcm.FileIOStorageObject.dump
+rtslib.tcm.PSCSIBackstore.dump
+rtslib.tcm.RDMCPStorageObject.dump
+rtslib.tcm.StorageObject.dump" class="py-name" href="#" onclick="return doclink('link-77', 'dump', 'link-72');">dump</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-78', 'targets', 'link-27');">targets</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-name">d</tt><tt class="py-op">[</tt><tt class="py-string">'fabric_modules'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name"><a title="rtslib.node.CFSNode.dump
+rtslib.root.RTSRoot.dump
+rtslib.target.FabricModule.dump
+rtslib.target.LUN.dump
+rtslib.target.MappedLUN.dump
+rtslib.target.NetworkPortal.dump
+rtslib.target.NodeACL.dump
+rtslib.target.TPG.dump
+rtslib.target.Target.dump
+rtslib.tcm.Backstore.dump
+rtslib.tcm.BlockStorageObject.dump
+rtslib.tcm.FileIOStorageObject.dump
+rtslib.tcm.PSCSIBackstore.dump
+rtslib.tcm.RDMCPStorageObject.dump
+rtslib.tcm.StorageObject.dump" class="py-name" href="#" onclick="return doclink('link-79', 'dump', 'link-72');">dump</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="rtslib.root.RTSRoot.fabric_modules" class="py-name" href="#" onclick="return doclink('link-80', 'fabric_modules', 'link-28');">fabric_modules</a></tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">                               <tt class="py-keyword">if</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name" targets="Method rtslib.target.FabricModule.has_feature()=rtslib.target.FabricModule-class.html#has_feature,Method rtslib.target.NodeACL.has_feature()=rtslib.target.NodeACL-class.html#has_feature,Method rtslib.target.TPG.has_feature()=rtslib.target.TPG-class.html#has_feature,Method rtslib.target.Target.has_feature()=rtslib.target.Target-class.html#has_feature"><a title="rtslib.target.FabricModule.has_feature
+rtslib.target.NodeACL.has_feature
+rtslib.target.TPG.has_feature
+rtslib.target.Target.has_feature" class="py-name" href="#" onclick="return doclink('link-81', 'has_feature', 'link-81');">has_feature</a></tt><tt class="py-op">(</tt><tt class="py-string">"discovery_auth"</tt><tt class="py-op">)</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                               <tt class="py-keyword">if</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name" targets="Variable rtslib.target.FabricModule.discovery_enable_auth=rtslib.target.FabricModule-class.html#discovery_enable_auth"><a title="rtslib.target.FabricModule.discovery_enable_auth" class="py-name" href="#" onclick="return doclink('link-82', 'discovery_enable_auth', 'link-82');">discovery_enable_auth</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">d</tt> </tt>
+</div><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot.clear_existing"></a><div id="RTSRoot.clear_existing-def"><a name="L172"></a><tt class="py-lineno">172</tt> <a class="py-toggle" href="#" id="RTSRoot.clear_existing-toggle" onclick="return toggle('RTSRoot.clear_existing');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#clear_existing">clear_existing</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">confirm</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot.clear_existing-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot.clear_existing-expanded"><a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        Remove entire current configuration.</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">confirm</tt><tt class="py-op">:</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-83" class="py-name"><a title="rtslib.utils.RTSLibError" class="py-name" href="#" onclick="return doclink('link-83', 'RTSLibError', 'link-12');">RTSLibError</a></tt><tt class="py-op">(</tt><tt class="py-string">"As a precaution, confirm=True needs to be set"</tt><tt class="py-op">)</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-comment"># Targets depend on storage objects, delete them first.</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-comment"># Deleting backstores deletes associated storageobjects.</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-84', 'targets', 'link-27');">targets</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">            <tt class="py-name">t</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name" targets="Method rtslib.node.CFSNode.delete()=rtslib.node.CFSNode-class.html#delete,Method rtslib.target.LUN.delete()=rtslib.target.LUN-class.html#delete,Method rtslib.target.MappedLUN.delete()=rtslib.target.MappedLUN-class.html#delete,Method rtslib.target.NodeACL.delete()=rtslib.target.NodeACL-class.html#delete,Method rtslib.target.TPG.delete()=rtslib.target.TPG-class.html#delete,Method rtslib.target.Target.delete()=rtslib.target.Target-class.html#delete,Method rtslib.tcm.Backstore.delete()=rtslib.tcm.Backstore-class.html#delete,Method rtslib.tcm.StorageObject.delete()=rtslib.tcm.StorageObject-class.html#delete"><a title="rtslib.node.CFSNode.delete
+rtslib.target.LUN.delete
+rtslib.target.MappedLUN.delete
+rtslib.target.NodeACL.delete
+rtslib.target.TPG.delete
+rtslib.target.Target.delete
+rtslib.tcm.Backstore.delete
+rtslib.tcm.StorageObject.delete" class="py-name" href="#" onclick="return doclink('link-85', 'delete', 'link-85');">delete</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">fm</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-name">f</tt> <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="rtslib.root.RTSRoot.fabric_modules" class="py-name" href="#" onclick="return doclink('link-86', 'fabric_modules', 'link-28');">fabric_modules</a></tt> <tt class="py-keyword">if</tt> <tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-87" class="py-name"><a title="rtslib.target.FabricModule.has_feature
+rtslib.target.NodeACL.has_feature
+rtslib.target.TPG.has_feature
+rtslib.target.Target.has_feature" class="py-name" href="#" onclick="return doclink('link-87', 'has_feature', 'link-81');">has_feature</a></tt><tt class="py-op">(</tt><tt class="py-string">"discovery_auth"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">            <tt class="py-name">fm</tt><tt class="py-op">.</tt><tt id="link-88" class="py-name" targets="Method rtslib.target.FabricModule.clear_discovery_auth_settings()=rtslib.target.FabricModule-class.html#clear_discovery_auth_settings"><a title="rtslib.target.FabricModule.clear_discovery_auth_settings" class="py-name" href="#" onclick="return doclink('link-88', 'clear_discovery_auth_settings', 'link-88');">clear_discovery_auth_settings</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">bs</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-89" class="py-name"><a title="rtslib.root.RTSRoot.backstores
+rtslib.root.backstores" class="py-name" href="#" onclick="return doclink('link-89', 'backstores', 'link-15');">backstores</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">            <tt class="py-name">bs</tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="rtslib.node.CFSNode.delete
+rtslib.target.LUN.delete
+rtslib.target.MappedLUN.delete
+rtslib.target.NodeACL.delete
+rtslib.target.TPG.delete
+rtslib.target.Target.delete
+rtslib.tcm.Backstore.delete
+rtslib.tcm.StorageObject.delete" class="py-name" href="#" onclick="return doclink('link-90', 'delete', 'link-85');">delete</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt>
+<a name="RTSRoot.restore"></a><div id="RTSRoot.restore-def"><a name="L188"></a><tt class="py-lineno">188</tt> <a class="py-toggle" href="#" id="RTSRoot.restore-toggle" onclick="return toggle('RTSRoot.restore');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root.RTSRoot-class.html#restore">restore</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">config</tt><tt class="py-op">,</tt> <tt class="py-param">clear_existing</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RTSRoot.restore-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="RTSRoot.restore-expanded"><a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-docstring">'''</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">        Takes a dict generated by dump() and reconfigures the target to match.</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">        Returns int reflecting how many non-fatal errors were encountered.</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">        '''</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-91" class="py-name" targets="Method rtslib.root.RTSRoot.clear_existing()=rtslib.root.RTSRoot-class.html#clear_existing"><a title="rtslib.root.RTSRoot.clear_existing" class="py-name" href="#" onclick="return doclink('link-91', 'clear_existing', 'link-91');">clear_existing</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-92" class="py-name"><a title="rtslib.root.RTSRoot.clear_existing" class="py-name" href="#" onclick="return doclink('link-92', 'clear_existing', 'link-91');">clear_existing</a></tt><tt class="py-op">(</tt><tt class="py-name">confirm</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name"><a title="rtslib.root.RTSRoot.storage_objects
+rtslib.tcm.Backstore.storage_objects" class="py-name" href="#" onclick="return doclink('link-93', 'storage_objects', 'link-45');">storage_objects</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-94', 'targets', 'link-27');">targets</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-95" class="py-name"><a title="rtslib.utils.RTSLibError" class="py-name" href="#" onclick="return doclink('link-95', 'RTSLibError', 'link-12');">RTSLibError</a></tt><tt class="py-op">(</tt><tt class="py-string">"backstores or targets present, not restoring."</tt> <tt class="py-op">+</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">                              <tt class="py-string">" Set clear_existing=True?"</tt><tt class="py-op">)</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt class="py-name">errors</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-96" class="py-name" targets="Variable rtslib.tcm.Backstore.index=rtslib.tcm.Backstore-class.html#index"><a title="rtslib.tcm.Backstore.index" class="py-name" href="#" onclick="return doclink('link-96', 'index', 'link-96');">index</a></tt><tt class="py-op">,</tt> <tt class="py-name">so</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'storage_objects'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">            <tt class="py-comment"># We need to create a Backstore object for each StorageObject</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-string">'plugin'</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">so</tt><tt class="py-op">:</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                <tt class="py-name">errors</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">            <tt class="py-name">bs_obj</tt> <tt class="py-op">=</tt> <tt id="link-97" class="py-name"><a title="rtslib.root.RTSRoot.backstores
+rtslib.root.backstores" class="py-name" href="#" onclick="return doclink('link-97', 'backstores', 'link-15');">backstores</a></tt><tt class="py-op">[</tt><tt class="py-name">so</tt><tt class="py-op">[</tt><tt class="py-string">'plugin'</tt><tt class="py-op">]</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt id="link-98" class="py-name"><a title="rtslib.tcm.Backstore.index" class="py-name" href="#" onclick="return doclink('link-98', 'index', 'link-96');">index</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">            <tt class="py-name">errors</tt> <tt class="py-op">+=</tt> <tt class="py-name">bs_obj</tt><tt class="py-op">.</tt><tt class="py-name">_storage_object_class</tt><tt class="py-op">.</tt><tt id="link-99" class="py-name" targets="Method rtslib.target.FabricModule.setup()=rtslib.target.FabricModule-class.html#setup,Class Method rtslib.target.Target.setup()=rtslib.target.Target-class.html#setup,Class Method rtslib.tcm.StorageObject.setup()=rtslib.tcm.StorageObject-class.html#setup"><a title="rtslib.target.FabricModule.setup
+rtslib.target.Target.setup
+rtslib.tcm.StorageObject.setup" class="py-name" href="#" onclick="return doclink('link-99', 'setup', 'link-99');">setup</a></tt><tt class="py-op">(</tt><tt class="py-name">bs_obj</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">so</tt><tt class="py-op">)</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-comment"># Don't need to create fabric modules</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">fm_obj</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-100" class="py-name"><a title="rtslib.root.RTSRoot.fabric_modules" class="py-name" href="#" onclick="return doclink('link-100', 'fabric_modules', 'link-28');">fabric_modules</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">fm</tt> <tt class="py-keyword">in</tt> <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'fabric_modules'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">fm</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-name">fm_obj</tt><tt class="py-op">.</tt><tt id="link-101" class="py-name"><a title="rtslib.tcm.Backstore.name
+rtslib.tcm.StorageObject.name" class="py-name" href="#" onclick="return doclink('link-101', 'name', 'link-68');">name</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">                    <tt class="py-name">errors</tt> <tt class="py-op">+=</tt> <tt class="py-name">fm_obj</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="rtslib.target.FabricModule.setup
+rtslib.target.Target.setup
+rtslib.tcm.StorageObject.setup" class="py-name" href="#" onclick="return doclink('link-102', 'setup', 'link-99');">setup</a></tt><tt class="py-op">(</tt><tt class="py-name">fm</tt><tt class="py-op">)</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">                    <tt class="py-keyword">break</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">t</tt> <tt class="py-keyword">in</tt> <tt class="py-name">config</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'targets'</tt><tt class="py-op">,</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-string">'fabric'</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">t</tt><tt class="py-op">:</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                <tt class="py-name">errors</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">t</tt><tt class="py-op">[</tt><tt class="py-string">'fabric'</tt><tt class="py-op">]</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-name">f</tt><tt class="py-op">.</tt><tt id="link-103" class="py-name"><a title="rtslib.tcm.Backstore.name
+rtslib.tcm.StorageObject.name" class="py-name" href="#" onclick="return doclink('link-103', 'name', 'link-68');">name</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">f</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-104" class="py-name"><a title="rtslib.root.RTSRoot.fabric_modules" class="py-name" href="#" onclick="return doclink('link-104', 'fabric_modules', 'link-28');">fabric_modules</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                <tt class="py-name">errors</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">                <tt class="py-keyword">continue</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">            <tt class="py-name">fm_obj</tt> <tt class="py-op">=</tt> <tt id="link-105" class="py-name"><a title="rtslib.target.FabricModule" class="py-name" href="#" onclick="return doclink('link-105', 'FabricModule', 'link-4');">FabricModule</a></tt><tt class="py-op">(</tt><tt class="py-name">t</tt><tt class="py-op">[</tt><tt class="py-string">'fabric'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">            <tt class="py-comment"># Instantiate target</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">            <tt class="py-name">errors</tt> <tt class="py-op">+=</tt> <tt id="link-106" class="py-name"><a title="rtslib.target.Target" class="py-name" href="#" onclick="return doclink('link-106', 'Target', 'link-3');">Target</a></tt><tt class="py-op">.</tt><tt id="link-107" class="py-name"><a title="rtslib.target.FabricModule.setup
+rtslib.target.Target.setup
+rtslib.tcm.StorageObject.setup" class="py-name" href="#" onclick="return doclink('link-107', 'setup', 'link-99');">setup</a></tt><tt class="py-op">(</tt><tt class="py-name">fm_obj</tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-108" class="py-name"><a title="rtslib.root.RTSRoot.storage_objects
+rtslib.tcm.Backstore.storage_objects" class="py-name" href="#" onclick="return doclink('link-108', 'storage_objects', 'link-45');">storage_objects</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">t</tt><tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">errors</tt> </tt>
+</div><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">    <tt id="link-109" class="py-name"><a title="rtslib.root.RTSRoot.backstores
+rtslib.root.backstores" class="py-name" href="#" onclick="return doclink('link-109', 'backstores', 'link-15');">backstores</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-110" class="py-name" targets="Method rtslib.root.RTSRoot._list_backstores()=rtslib.root.RTSRoot-class.html#_list_backstores"><a title="rtslib.root.RTSRoot._list_backstores" class="py-name" href="#" onclick="return doclink('link-110', '_list_backstores', 'link-110');">_list_backstores</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of Backstore objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">    <tt id="link-111" class="py-name"><a title="rtslib.root.RTSRoot.targets
+rtslib.target.FabricModule.targets" class="py-name" href="#" onclick="return doclink('link-111', 'targets', 'link-27');">targets</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-112" class="py-name" targets="Method rtslib.root.RTSRoot._list_targets()=rtslib.root.RTSRoot-class.html#_list_targets,Method rtslib.target.FabricModule._list_targets()=rtslib.target.FabricModule-class.html#_list_targets"><a title="rtslib.root.RTSRoot._list_targets
+rtslib.target.FabricModule._list_targets" class="py-name" href="#" onclick="return doclink('link-112', '_list_targets', 'link-112');">_list_targets</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of Target objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">    <tt id="link-113" class="py-name"><a title="rtslib.root.RTSRoot.tpgs
+rtslib.target.Target.tpgs" class="py-name" href="#" onclick="return doclink('link-113', 'tpgs', 'link-48');">tpgs</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-114" class="py-name" targets="Method rtslib.root.RTSRoot._list_tpgs()=rtslib.root.RTSRoot-class.html#_list_tpgs,Method rtslib.target.Target._list_tpgs()=rtslib.target.Target-class.html#_list_tpgs"><a title="rtslib.root.RTSRoot._list_tpgs
+rtslib.target.Target._list_tpgs" class="py-name" href="#" onclick="return doclink('link-114', '_list_tpgs', 'link-114');">_list_tpgs</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all the existing TPG objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">    <tt id="link-115" class="py-name"><a title="rtslib.root.RTSRoot.node_acls
+rtslib.target.TPG.node_acls" class="py-name" href="#" onclick="return doclink('link-115', 'node_acls', 'link-52');">node_acls</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-116" class="py-name" targets="Method rtslib.root.RTSRoot._list_node_acls()=rtslib.root.RTSRoot-class.html#_list_node_acls,Method rtslib.target.TPG._list_node_acls()=rtslib.target.TPG-class.html#_list_node_acls"><a title="rtslib.root.RTSRoot._list_node_acls
+rtslib.target.TPG._list_node_acls" class="py-name" href="#" onclick="return doclink('link-116', '_list_node_acls', 'link-116');">_list_node_acls</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all the existing NodeACL objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">    <tt id="link-117" class="py-name" targets="Variable rtslib.root.RTSRoot.sessions=rtslib.root.RTSRoot-class.html#sessions"><a title="rtslib.root.RTSRoot.sessions" class="py-name" href="#" onclick="return doclink('link-117', 'sessions', 'link-117');">sessions</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-118" class="py-name" targets="Method rtslib.root.RTSRoot._list_sessions()=rtslib.root.RTSRoot-class.html#_list_sessions"><a title="rtslib.root.RTSRoot._list_sessions" class="py-name" href="#" onclick="return doclink('link-118', '_list_sessions', 'link-118');">_list_sessions</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all the existing sessions."</tt><tt class="py-op">)</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">    <tt id="link-119" class="py-name"><a title="rtslib.root.RTSRoot.network_portals
+rtslib.target.TPG.network_portals" class="py-name" href="#" onclick="return doclink('link-119', 'network_portals', 'link-56');">network_portals</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-120" class="py-name" targets="Method rtslib.root.RTSRoot._list_network_portals()=rtslib.root.RTSRoot-class.html#_list_network_portals,Method rtslib.target.TPG._list_network_portals()=rtslib.target.TPG-class.html#_list_network_portals"><a title="rtslib.root.RTSRoot._list_network_portals
+rtslib.target.TPG._list_network_portals" class="py-name" href="#" onclick="return doclink('link-120', '_list_network_portals', 'link-120');">_list_network_portals</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all the existing Network Portal objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">    <tt id="link-121" class="py-name"><a title="rtslib.root.RTSRoot.storage_objects
+rtslib.tcm.Backstore.storage_objects" class="py-name" href="#" onclick="return doclink('link-121', 'storage_objects', 'link-45');">storage_objects</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-122" class="py-name" targets="Method rtslib.root.RTSRoot._list_storage_objects()=rtslib.root.RTSRoot-class.html#_list_storage_objects,Method rtslib.tcm.Backstore._list_storage_objects()=rtslib.tcm.Backstore-class.html#_list_storage_objects"><a title="rtslib.root.RTSRoot._list_storage_objects
+rtslib.tcm.Backstore._list_storage_objects" class="py-name" href="#" onclick="return doclink('link-122', '_list_storage_objects', 'link-122');">_list_storage_objects</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all the existing Storage objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">    <tt id="link-123" class="py-name"><a title="rtslib.root.RTSRoot.luns
+rtslib.target.TPG.luns" class="py-name" href="#" onclick="return doclink('link-123', 'luns', 'link-60');">luns</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-124" class="py-name" targets="Method rtslib.root.RTSRoot._list_luns()=rtslib.root.RTSRoot-class.html#_list_luns,Method rtslib.target.TPG._list_luns()=rtslib.target.TPG-class.html#_list_luns"><a title="rtslib.root.RTSRoot._list_luns
+rtslib.target.TPG._list_luns" class="py-name" href="#" onclick="return doclink('link-124', '_list_luns', 'link-124');">_list_luns</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all existing LUN objects."</tt><tt class="py-op">)</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">    <tt id="link-125" class="py-name"><a title="rtslib.root.RTSRoot.fabric_modules" class="py-name" href="#" onclick="return doclink('link-125', 'fabric_modules', 'link-28');">fabric_modules</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-126" class="py-name" targets="Method rtslib.root.RTSRoot._list_fabric_modules()=rtslib.root.RTSRoot-class.html#_list_fabric_modules"><a title="rtslib.root.RTSRoot._list_fabric_modules" class="py-name" href="#" onclick="return doclink('link-126', '_list_fabric_modules', 'link-126');">_list_fabric_modules</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">            <tt class="py-name">doc</tt><tt class="py-op">=</tt><tt class="py-string">"Get the list of all FabricModule objects."</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> </tt>
+<a name="_test"></a><div id="_test-def"><a name="L250"></a><tt class="py-lineno">250</tt> <a class="py-toggle" href="#" id="_test-toggle" onclick="return toggle('_test');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="rtslib.root-module.html#_test">_test</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_test-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_test-expanded"><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt class="py-docstring">'''Run the doctests.'''</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">    <tt class="py-keyword">import</tt> <tt class="py-name">doctest</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">    <tt class="py-name">doctest</tt><tt class="py-op">.</tt><tt class="py-name">testmod</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">    <tt id="link-127" class="py-name" targets="Function rtslib.node._test()=rtslib.node-module.html#_test,Function rtslib.root._test()=rtslib.root-module.html#_test,Function rtslib.target._test()=rtslib.target-module.html#_test,Function rtslib.tcm._test()=rtslib.tcm-module.html#_test,Function rtslib.utils._test()=rtslib.utils-module.html#_test"><a title="rtslib.node._test
+rtslib.root._test
+rtslib.target._test
+rtslib.tcm._test
+rtslib.utils._test" class="py-name" href="#" onclick="return doclink('link-127', '_test', 'link-127');">_test</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Mon Mar 19 14:44:44 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
