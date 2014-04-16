@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>rtslib.target.Target</title>
+  <title>rtslib.fabric.Qla2xxxFabricModule</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -38,8 +38,8 @@
     <td width="100%">
       <span class="breadcrumbs">
         <a href="rtslib-module.html">Package&nbsp;rtslib</a> ::
-        <a href="rtslib.target-module.html">Module&nbsp;target</a> ::
-        Class&nbsp;Target
+        <a href="rtslib.fabric-module.html">Module&nbsp;fabric</a> ::
+        Class&nbsp;Qla2xxxFabricModule
       </span>
     </td>
     <td>
@@ -49,26 +49,25 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="rtslib.target.Target-class.html"
+            >]&nbsp;|&nbsp;<a href="rtslib.fabric.Qla2xxxFabricModule-class.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class Target</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.target-pysrc.html#Target">source&nbsp;code</a></span></p>
+<h1 class="epydoc">Class Qla2xxxFabricModule</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule">source&nbsp;code</a></span></p>
 <pre class="base-tree">
-  object --+    
-           |    
-<a href="rtslib.node.CFSNode-class.html">node.CFSNode</a> --+
-               |
-              <strong class="uidshort">Target</strong>
+   object --+        
+            |        
+ <a href="rtslib.node.CFSNode-class.html">node.CFSNode</a> --+    
+                |    
+<a href="rtslib.fabric._BaseFabricModule-class.html" onclick="show_private();">_BaseFabricModule</a> --+
+                    |
+                   <strong class="uidshort">Qla2xxxFabricModule</strong>
 </pre>
 
 <hr />
-<p>This is an interface to Targets in configFS. A Target is identified by
-  its wwn. To a Target is attached a list of TPG objects.</p>
-
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -92,10 +91,10 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="rtslib.target.Target-class.html#__repr__" class="summary-sig-name">__repr__</a>(<span class="summary-sig-arg">self</span>)</span><br />
-      repr(x)</td>
+          <td><span class="summary-sig"><a href="rtslib.fabric.Qla2xxxFabricModule-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Instantiate a FabricModule object, according to the provided name.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target.__repr__">source&nbsp;code</a></span>
+            <span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule.__init__">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -109,30 +108,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="rtslib.target.Target-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">fabric_module</span>,
-        <span class="summary-sig-arg">wwn</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">any</code><code class="variable-quote">'</code></span>)</span><br />
-      Returns:
-      A Target object.</td>
+          <td><span class="summary-sig"><a href="rtslib.fabric.Qla2xxxFabricModule-class.html#to_fabric_wwn" class="summary-sig-name">to_fabric_wwn</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">wwn</span>)</span><br />
+      Some fabrics need WWNs in a format different than rtslib's internal 
+      format.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target.__init__">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_list_tpgs"></a><span class="summary-sig-name">_list_tpgs</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target._list_tpgs">source&nbsp;code</a></span>
+            <span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule.to_fabric_wwn">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -146,44 +127,12 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="has_feature"></a><span class="summary-sig-name">has_feature</span>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">feature</span>)</span><br />
-      Whether or not this Target has a certain feature.</td>
+          <td><span class="summary-sig"><a href="rtslib.fabric.Qla2xxxFabricModule-class.html#from_fabric_wwn" class="summary-sig-name">from_fabric_wwn</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">wwn</span>)</span><br />
+      Converts from WWN format used in this fabric's LIO configfs to 
+      canonical format.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target.has_feature">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="rtslib.target.Target-class.html#delete" class="summary-sig-name">delete</a>(<span class="summary-sig-arg">self</span>)</span><br />
-      Recursively deletes a Target object.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target.delete">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="rtslib.target.Target-class.html#dump" class="summary-sig-name">dump</a>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target.dump">source&nbsp;code</a></span>
+            <span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule.from_fabric_wwn">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -193,7 +142,28 @@
   </tr>
   <tr>
     <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.fabric._BaseFabricModule-class.html" onclick="show_private();">_BaseFabricModule</a></code></b>:
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#clear_discovery_auth_settings">clear_discovery_auth_settings</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#dump">dump</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#has_feature">has_feature</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#needs_wwn">needs_wwn</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#setup">setup</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#to_normalized_wwn">to_normalized_wwn</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.fabric._BaseFabricModule-class.html" onclick="show_private();">_BaseFabricModule</a></code></b> (private):
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_assert_feature" onclick="show_private();">_assert_feature</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_check_self" onclick="show_private();">_check_self</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_get_disc_attr" onclick="show_private();">_get_disc_attr</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_get_discovery_authenticate_target" onclick="show_private();">_get_discovery_authenticate_target</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_get_discovery_enable_auth" onclick="show_private();">_get_discovery_enable_auth</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_get_version" onclick="show_private();">_get_version</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_get_wwns" onclick="show_private();">_get_wwns</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_list_targets" onclick="show_private();">_list_targets</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_set_disc_attr" onclick="show_private();">_set_disc_attr</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#_set_discovery_enable_auth" onclick="show_private();">_set_discovery_enable_auth</a></code>
+      </p></div>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
+      <code><a href="rtslib.node.CFSNode-class.html#delete">delete</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#get_attribute">get_attribute</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#get_parameter">get_parameter</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#list_attributes">list_attributes</a></code>,
@@ -202,7 +172,6 @@
       <code><a href="rtslib.node.CFSNode-class.html#set_parameter">set_parameter</a></code>
       </p>
     <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b> (private):
-      <code><a href="rtslib.node.CFSNode-class.html#_check_self" onclick="show_private();">_check_self</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_create_in_cfs_ine" onclick="show_private();">_create_in_cfs_ine</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_exists" onclick="show_private();">_exists</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_get_path" onclick="show_private();">_get_path</a></code>,
@@ -216,49 +185,12 @@
       <code>__new__</code>,
       <code>__reduce__</code>,
       <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
       <code>__setattr__</code>,
       <code>__sizeof__</code>,
       <code>__str__</code>,
       <code>__subclasshook__</code>
       </p>
-    </td>
-  </tr>
-</table>
-<!-- ==================== CLASS METHODS ==================== -->
-<a name="section-ClassMethods"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Class Methods</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassMethods"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="rtslib.target.Target-class.html#setup" class="summary-sig-name">setup</a>(<span class="summary-sig-arg">cls</span>,
-        <span class="summary-sig-arg">fm_obj</span>,
-        <span class="summary-sig-arg">t</span>,
-        <span class="summary-sig-arg">err_func</span>)</span><br />
-      Set up target objects based upon t dict, from saved config.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#Target.setup">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
     </td>
   </tr>
 </table>
@@ -308,12 +240,22 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="rtslib.target.Target-class.html#tpgs" class="summary-name">tpgs</a><br />
-      Get the list of TPG for the Target.
+        <a href="rtslib.fabric.Qla2xxxFabricModule-class.html#wwns" class="summary-name">wwns</a><br />
+      iterable of WWNs present for this fabric
     </td>
   </tr>
   <tr>
     <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.fabric._BaseFabricModule-class.html" onclick="show_private();">_BaseFabricModule</a></code></b>:
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#discovery_authenticate_target">discovery_authenticate_target</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#discovery_enable_auth">discovery_enable_auth</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#discovery_mutual_password">discovery_mutual_password</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#discovery_mutual_userid">discovery_mutual_userid</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#discovery_password">discovery_password</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#discovery_userid">discovery_userid</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#targets">targets</a></code>,
+      <code><a href="rtslib.fabric._BaseFabricModule-class.html#version">version</a></code>
+      </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
       <code><a href="rtslib.node.CFSNode-class.html#exists">exists</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#path">path</a></code>
@@ -342,30 +284,6 @@
   </td>
 </tr>
 </table>
-<a name="__repr__"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">__repr__</span>(<span class="sig-arg">self</span>)</span>
-    <br /><em class="fname">(Representation operator)</em>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="rtslib.target-pysrc.html#Target.__repr__">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>repr(x)</p>
-  <dl class="fields">
-    <dt>Overrides:
-        object.__repr__
-        <dd><em class="note">(inherited documentation)</em></dd>
-    </dt>
-  </dl>
-</td></tr></table>
-</div>
 <a name="__init__"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -373,113 +291,75 @@
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">fabric_module</span>,
-        <span class="sig-arg">wwn</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">mode</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">any</code><code class="variable-quote">'</code></span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>)</span>
     <br /><em class="fname">(Constructor)</em>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="rtslib.target-pysrc.html#Target.__init__">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule.__init__">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <p>Instantiate a FabricModule object, according to the provided name.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>fabric_module</code></strong> (FabricModule) - The target's fabric module.</li>
-        <li><strong class="pname"><code>wwn</code></strong> (string) - The optional Target's wwn. If no wwn is specified, one will be 
-          generated.</li>
-        <li><strong class="pname"><code>mode</code></strong> (string) - An optionnal string containing the object creation mode:
-          <ul>
-            <li>
-              <i>'any'</i> means the configFS object will be either looked 
-              up or created.
-            </li>
-            <li>
-              <i>'lookup'</i> means the object MUST already exist configFS.
-            </li>
-            <li>
-              <i>'create'</i> means the object must NOT already exist in 
-              configFS.
-            </li>
-          </ul></li>
+        <li><strong class="pname"><code>name</code></strong> - the name of the FabricModule object. It must match an existing 
+          target fabric module specfile (name.spec).</li>
     </ul></dd>
-    <dt>Returns:</dt>
-        <dd>A Target object.</dd>
     <dt>Overrides:
         object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
     </dt>
   </dl>
 </td></tr></table>
 </div>
-<a name="delete"></a>
+<a name="to_fabric_wwn"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">delete</span>(<span class="sig-arg">self</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">to_fabric_wwn</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">wwn</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="rtslib.target-pysrc.html#Target.delete">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule.to_fabric_wwn">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Recursively deletes a Target object. This will delete all attached TPG
-  objects and then the Target itself.</p>
+  <p>Some fabrics need WWNs in a format different than rtslib's internal 
+  format. These fabrics should override this method.</p>
   <dl class="fields">
     <dt>Overrides:
-        <a href="rtslib.node.CFSNode-class.html#delete">node.CFSNode.delete</a>
+        <a href="rtslib.fabric._BaseFabricModule-class.html#to_fabric_wwn">_BaseFabricModule.to_fabric_wwn</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
     </dt>
   </dl>
 </td></tr></table>
 </div>
-<a name="setup"></a>
+<a name="from_fabric_wwn"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">setup</span>(<span class="sig-arg">cls</span>,
-        <span class="sig-arg">fm_obj</span>,
-        <span class="sig-arg">t</span>,
-        <span class="sig-arg">err_func</span>)</span>
-    <br /><em class="fname">Class Method</em>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">from_fabric_wwn</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">wwn</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="rtslib.target-pysrc.html#Target.setup">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="rtslib.fabric-pysrc.html#Qla2xxxFabricModule.from_fabric_wwn">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Set up target objects based upon t dict, from saved config. Guard 
-  against missing or bad dict items, but keep going. Call 'err_func' for 
-  each error.</p>
-  <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<a name="dump"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">dump</span>(<span class="sig-arg">self</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="rtslib.target-pysrc.html#Target.dump">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  
+  <p>Converts from WWN format used in this fabric's LIO configfs to 
+  canonical format. Note: Do not call from wwns(). There's no guarantee 
+  fabric wwn format is the same as wherever wwns() is reading from.</p>
   <dl class="fields">
     <dt>Overrides:
-        <a href="rtslib.node.CFSNode-class.html#dump">node.CFSNode.dump</a>
+        <a href="rtslib.fabric._BaseFabricModule-class.html#from_fabric_wwn">_BaseFabricModule.from_fabric_wwn</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
     </dt>
   </dl>
 </td></tr></table>
@@ -503,16 +383,16 @@
   </td>
 </tr>
 </table>
-<a name="tpgs"></a>
+<a name="wwns"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
-  <h3 class="epydoc">tpgs</h3>
-  <p>Get the list of TPG for the Target.</p>
+  <h3 class="epydoc">wwns</h3>
+  <p>iterable of WWNs present for this fabric</p>
   <dl class="fields">
     <dt>Get Method:</dt>
-    <dd class="value"><span class="summary-sig"><a href="rtslib.target.Target-class.html#_list_tpgs" class="summary-sig-name" onclick="show_private();">_list_tpgs</a>(<span class="summary-sig-arg">self</span>)</span>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.wwns(<span class="summary-sig-arg">self</span>)</span>
     </dd>
   </dl>
 </td></tr></table>

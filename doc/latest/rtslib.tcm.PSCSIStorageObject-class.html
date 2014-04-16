@@ -55,8 +55,8 @@
     </td>
   </tr>
 </table>
-<!-- ==================== TYPE DESCRIPTION ==================== -->
-<h1 class="epydoc">type PSCSIStorageObject</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject">source&nbsp;code</a></span></p>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class PSCSIStorageObject</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject">source&nbsp;code</a></span></p>
 <pre class="base-tree">
   object --+        
            |        
@@ -94,10 +94,9 @@
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td><span class="summary-sig"><a href="rtslib.tcm.PSCSIStorageObject-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">backstore</span>,
         <span class="summary-sig-arg">name</span>,
         <span class="summary-sig-arg">dev</span>=<span class="summary-sig-default">None</span>)</span><br />
-      A PSCSIStorageObject can be instanciated in two ways:</td>
+      A PSCSIStorageObject can be instantiated in two ways:</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject.__init__">source&nbsp;code</a></span>
             
@@ -113,10 +112,27 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="_configure"></a><span class="summary-sig-name">_configure</span>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="rtslib.tcm.PSCSIStorageObject-class.html#_configure" class="summary-sig-name" onclick="show_private();">_configure</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">dev</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject._configure">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.tcm.PSCSIStorageObject-class.html#_set_wwn" class="summary-sig-name" onclick="show_private();">_set_wwn</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">wwn</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject._set_wwn">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -236,30 +252,47 @@
       
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.tcm.PSCSIStorageObject-class.html#dump" class="summary-sig-name">dump</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject.dump">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.tcm.StorageObject-class.html">StorageObject</a></code></b>:
+      <code><a href="rtslib.tcm.StorageObject-class.html#__eq__">__eq__</a></code>,
+      <code><a href="rtslib.tcm.StorageObject-class.html#__ne__">__ne__</a></code>,
+      <code><a href="rtslib.tcm.StorageObject-class.html#__repr__">__repr__</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#delete">delete</a></code>,
-      <code><a href="rtslib.tcm.StorageObject-class.html#dump">dump</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#is_configured">is_configured</a></code>
       </p>
     <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.tcm.StorageObject-class.html">StorageObject</a></code></b> (private):
+      <code><a href="rtslib.tcm.StorageObject-class.html#_config_pr_aptpl" onclick="show_private();">_config_pr_aptpl</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_control" onclick="show_private();">_control</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_enable" onclick="show_private();">_enable</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_gen_attached_luns" onclick="show_private();">_gen_attached_luns</a></code>,
-      <code><a href="rtslib.tcm.StorageObject-class.html#_get_backstore" onclick="show_private();">_get_backstore</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_get_name" onclick="show_private();">_get_name</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_get_status" onclick="show_private();">_get_status</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_get_udev_path" onclick="show_private();">_get_udev_path</a></code>,
+      <code><a href="rtslib.tcm.StorageObject-class.html#_get_version" onclick="show_private();">_get_version</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_get_wwn" onclick="show_private();">_get_wwn</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_list_attached_luns" onclick="show_private();">_list_attached_luns</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_parse_info" onclick="show_private();">_parse_info</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_set_udev_path" onclick="show_private();">_set_udev_path</a></code>,
-      <code><a href="rtslib.tcm.StorageObject-class.html#_set_wwn" onclick="show_private();">_set_wwn</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#_write_fd" onclick="show_private();">_write_fd</a></code>
       </p></div>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
-      <code><a href="rtslib.node.CFSNode-class.html#__str__">__str__</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#get_attribute">get_attribute</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#get_parameter">get_parameter</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#list_attributes">list_attributes</a></code>,
@@ -272,9 +305,21 @@
       <code><a href="rtslib.node.CFSNode-class.html#_create_in_cfs_ine" onclick="show_private();">_create_in_cfs_ine</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_exists" onclick="show_private();">_exists</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_get_path" onclick="show_private();">_get_path</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#_is_fresh" onclick="show_private();">_is_fresh</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_list_files" onclick="show_private();">_list_files</a></code>
       </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
     </td>
   </tr>
 </table>
@@ -298,7 +343,8 @@
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.tcm.StorageObject-class.html">StorageObject</a></code></b>:
-      <code><a href="rtslib.tcm.StorageObject-class.html#setup">setup</a></code>
+      <code><a href="rtslib.tcm.StorageObject-class.html#all">all</a></code>,
+      <code><a href="rtslib.tcm.StorageObject-class.html#so_from_path">so_from_path</a></code>
       </p>
     </td>
   </tr>
@@ -323,9 +369,7 @@
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
-      <code><a href="rtslib.node.CFSNode-class.html#alua_metadata_dir">alua_metadata_dir</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#configfs_dir">configfs_dir</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#spec_dir">spec_dir</a></code>
+      <code><a href="rtslib.node.CFSNode-class.html#configfs_dir">configfs_dir</a></code>
       </p>
     </td>
   </tr>
@@ -415,15 +459,17 @@
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.tcm.StorageObject-class.html">StorageObject</a></code></b>:
       <code><a href="rtslib.tcm.StorageObject-class.html#attached_luns">attached_luns</a></code>,
-      <code><a href="rtslib.tcm.StorageObject-class.html#backstore">backstore</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#name">name</a></code>,
       <code><a href="rtslib.tcm.StorageObject-class.html#status">status</a></code>,
-      <code><a href="rtslib.tcm.StorageObject-class.html#udev_path">udev_path</a></code>
+      <code><a href="rtslib.tcm.StorageObject-class.html#udev_path">udev_path</a></code>,
+      <code><a href="rtslib.tcm.StorageObject-class.html#version">version</a></code>
       </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
       <code><a href="rtslib.node.CFSNode-class.html#exists">exists</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#is_fresh">is_fresh</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#path">path</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
       </p>
     </td>
   </tr>
@@ -454,7 +500,6 @@
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
   <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">backstore</span>,
         <span class="sig-arg">name</span>,
         <span class="sig-arg">dev</span>=<span class="sig-default">None</span>)</span>
     <br /><em class="fname">(Constructor)</em>
@@ -464,48 +509,110 @@
     </td>
   </tr></table>
   
-  <p>A PSCSIStorageObject can be instanciated in two ways:</p>
+  <p>A PSCSIStorageObject can be instantiated in two ways:</p>
   <ul>
     <li>
       <b>Creation mode</b>: If <i>dev</i> is specified, the underlying 
       configFS object will be created with that parameter. No 
       PSCSIStorageObject with the same <i>name</i> can pre-exist in the 
-      parent PSCSIBackstore in that mode, or instanciation will fail.
+      parent PSCSIBackstore in that mode, or instantiation will fail.
     </li>
     <li>
       <b>Lookup mode</b>: If <i>dev</i> is not set, then the 
       PSCSIStorageObject will be bound to the existing configFS object in 
       the parent PSCSIBackstore having the specified <i>name</i>. The 
       underlying configFS object must already exist in that mode, or 
-      instanciation will fail.
+      instantiation will fail.
     </li>
   </ul>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>backstore</code></strong> (PSCSIBackstore) - The parent backstore of the PSCSIStorageObject.</li>
         <li><strong class="pname"><code>name</code></strong> (string) - The name of the PSCSIStorageObject.</li>
         <li><strong class="pname"><code>dev</code></strong> (string) - You have two choices:
           <ul>
             <li>
               Use the SCSI id of the device: 
-              <i>dev=&quot;H:C:T:L&quot;</i>. If the parent backstore is in
-              legacy mode, you must use <i>dev=&quot;C:T:L&quot;</i> 
-              instead, as the backstore index of the SCSI dev device would 
-              then be constrained by the parent backstore index.
+              <i>dev=&quot;H:C:T:L&quot;</i>.
             </li>
             <li>
               Use the path to the SCSI device: 
-              <i>dev=&quot;/path/to/dev&quot;</i>. Note that if the parent 
-              Backstore is in legacy mode, the device must have the same 
-              backstore index as the parent backstore.
+              <i>dev=&quot;/path/to/dev&quot;</i>.
             </li>
           </ul></li>
     </ul></dd>
     <dt>Returns:</dt>
         <dd>A PSCSIStorageObject object.</dd>
     <dt>Overrides:
-        <a href="rtslib.node.CFSNode-class.html#__init__">node.CFSNode.__init__</a>
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_configure"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_configure</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">dev</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject._configure">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="rtslib.tcm.StorageObject-class.html#_configure" onclick="show_private();">StorageObject._configure</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_set_wwn"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_set_wwn</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">wwn</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject._set_wwn">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="rtslib.tcm.StorageObject-class.html#_set_wwn" onclick="show_private();">StorageObject._set_wwn</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="dump"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dump</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.tcm-pysrc.html#PSCSIStorageObject.dump">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="rtslib.node.CFSNode-class.html#dump">node.CFSNode.dump</a>
     </dt>
   </dl>
 </td></tr></table>
@@ -538,6 +645,13 @@
   <p>Get the StorageObject T10 WWN Unit Serial as a string. You cannot set 
   it for pscsi-backed StorageObjects.</p>
   <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>._get_wwn(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.tcm.PSCSIStorageObject-class.html#_set_wwn" class="summary-sig-name" onclick="show_private();">_set_wwn</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">wwn</span>)</span>
+    </dd>
   </dl>
 </td></tr></table>
 </div>
@@ -666,8 +780,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Mon Mar 19 14:44:43 2012
+    Generated by Epydoc 3.0.1 on Wed Apr 16 22:40:11 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

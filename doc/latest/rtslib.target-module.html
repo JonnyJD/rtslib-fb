@@ -56,19 +56,27 @@
 </table>
 <!-- ==================== MODULE DESCRIPTION ==================== -->
 <h1 class="epydoc">Module target</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.target-pysrc.html">source&nbsp;code</a></span></p>
-<p>Implements the RTS generic Target fabric classes.</p>
-  <p>This file is part of RTSLib Community Edition. Copyright (c) 2011 by 
-  RisingTide Systems LLC</p>
-  <p>This program is free software: you can redistribute it and/or modify 
-  it under the terms of the GNU Affero General Public License as published 
-  by the Free Software Foundation, version 3 (AGPLv3).</p>
-  <p>This program is distributed in the hope that it will be useful, but 
-  WITHOUT ANY WARRANTY; without even the implied warranty of 
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero 
-  General Public License for more details.</p>
-  <p>You should have received a copy of the GNU Affero General Public 
-  License along with this program.  If not, see 
-  &lt;http://www.gnu.org/licenses/&gt;.</p>
+<pre class="literalblock">
+
+Implements the RTS generic Target fabric classes.
+
+This file is part of RTSLib.
+Copyright (c) 2011-2013 by Datera, Inc.
+Copyright (c) 2011-2013 by Red Hat, Inc.
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may
+not use this file except in compliance with the License. You may obtain
+a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+
+</pre>
 
 <!-- ==================== CLASSES ==================== -->
 <a name="section-Classes"></a>
@@ -88,59 +96,51 @@
   </td>
 </tr>
 <tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.FabricModule-class.html" class="summary-name">FabricModule</a><br />
-      This is an interface to RTS Target Fabric Modules.
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.Target-class.html" class="summary-name">Target</a><br />
+      This is an interface to Targets in configFS.
     </td>
   </tr>
 <tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.LUN-class.html" class="summary-name">LUN</a><br />
-      This is an interface to RTS Target LUNs in configFS.
-    </td>
-  </tr>
-<tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.MappedLUN-class.html" class="summary-name">MappedLUN</a><br />
-      This is an interface to RTS Target Mapped LUNs.
-    </td>
-  </tr>
-<tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.NodeACL-class.html" class="summary-name">NodeACL</a><br />
-      This is an interface to node ACLs in configFS.
-    </td>
-  </tr>
-<tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.Session-class.html" class="summary-name">Session</a><br />
-      This is an interface to sessions, which are associated to <a 
-        href="rtslib.target.NodeACL-class.html" class="link">NodeACL</a>s.
-    </td>
-  </tr>
-<tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.Connection-class.html" class="summary-name">Connection</a><br />
-      This is an interface to connections, which are part of a <a 
-        href="rtslib.target.Session-class.html" class="link">Session</a>.
-    </td>
-  </tr>
-<tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.NetworkPortal-class.html" class="summary-name">NetworkPortal</a><br />
-      This is an interface to NetworkPortals in configFS.
-    </td>
-  </tr>
-<tr>
-    <td class="summary" colspan="2">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
         <a href="rtslib.target.TPG-class.html" class="summary-name">TPG</a><br />
       This is a an interface to Target Portal Groups in configFS.
     </td>
   </tr>
 <tr>
-    <td class="summary" colspan="2">
-        <a href="rtslib.target.Target-class.html" class="summary-name">Target</a><br />
-      This is an interface to Targets in configFS.
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.LUN-class.html" class="summary-name">LUN</a><br />
+      This is an interface to RTS Target LUNs in configFS.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.NetworkPortal-class.html" class="summary-name">NetworkPortal</a><br />
+      This is an interface to NetworkPortals in configFS.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.NodeACL-class.html" class="summary-name">NodeACL</a><br />
+      This is an interface to node ACLs in configFS.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.MappedLUN-class.html" class="summary-name">MappedLUN</a><br />
+      This is an interface to RTS Target Mapped LUNs.
     </td>
   </tr>
 </table>
@@ -229,8 +229,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Mon Mar 19 14:44:43 2012
+    Generated by Epydoc 3.0.1 on Wed Apr 16 22:40:11 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

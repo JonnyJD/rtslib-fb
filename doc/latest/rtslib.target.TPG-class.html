@@ -55,8 +55,8 @@
     </td>
   </tr>
 </table>
-<!-- ==================== TYPE DESCRIPTION ==================== -->
-<h1 class="epydoc">type TPG</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.target-pysrc.html#TPG">source&nbsp;code</a></span></p>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class TPG</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.target-pysrc.html#TPG">source&nbsp;code</a></span></p>
 <pre class="base-tree">
   object --+    
            |    
@@ -89,6 +89,23 @@
     </table>
   </td>
 </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="rtslib.target.TPG-class.html#__repr__" class="summary-sig-name">__repr__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      repr(x)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#TPG.__repr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -233,25 +250,6 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="rtslib.target.TPG-class.html#_create_in_cfs_ine" class="summary-sig-name" onclick="show_private();">_create_in_cfs_ine</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">mode</span>)</span><br />
-      Creates the configFS node if it does not already exists depending on 
-      the mode.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#TPG._create_in_cfs_ine">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
           <td><span class="summary-sig"><a name="_list_node_acls"></a><span class="summary-sig-name">_list_node_acls</span>(<span class="summary-sig-arg">self</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="rtslib.target-pysrc.html#TPG._list_node_acls">source&nbsp;code</a></span>
@@ -288,22 +286,6 @@
         <span class="summary-sig-arg">command</span>)</span></td>
           <td align="right" valign="top">
             <span class="codelink"><a href="rtslib.target-pysrc.html#TPG._control">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr class="private">
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="_get_alua_metadata_path"></a><span class="summary-sig-name">_get_alua_metadata_path</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="rtslib.target-pysrc.html#TPG._get_alua_metadata_path">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -405,6 +387,22 @@
       
     </td>
   </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_authenticate_target"></a><span class="summary-sig-name">_get_authenticate_target</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#TPG._get_authenticate_target">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -424,7 +422,6 @@
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
-      <code><a href="rtslib.node.CFSNode-class.html#__str__">__str__</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#get_attribute">get_attribute</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#get_parameter">get_parameter</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#list_attributes">list_attributes</a></code>,
@@ -434,11 +431,61 @@
       </p>
     <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b> (private):
       <code><a href="rtslib.node.CFSNode-class.html#_check_self" onclick="show_private();">_check_self</a></code>,
+      <code><a href="rtslib.node.CFSNode-class.html#_create_in_cfs_ine" onclick="show_private();">_create_in_cfs_ine</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_exists" onclick="show_private();">_exists</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_get_path" onclick="show_private();">_get_path</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#_is_fresh" onclick="show_private();">_is_fresh</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#_list_files" onclick="show_private();">_list_files</a></code>
       </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS METHODS ==================== -->
+<a name="section-ClassMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setup"></a><span class="summary-sig-name">setup</span>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">t_obj</span>,
+        <span class="summary-sig-arg">tpg</span>,
+        <span class="summary-sig-arg">err_func</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="rtslib.target-pysrc.html#TPG.setup">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 </table>
@@ -462,9 +509,7 @@
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
-      <code><a href="rtslib.node.CFSNode-class.html#alua_metadata_dir">alua_metadata_dir</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#configfs_dir">configfs_dir</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#spec_dir">spec_dir</a></code>
+      <code><a href="rtslib.node.CFSNode-class.html#configfs_dir">configfs_dir</a></code>
       </p>
     </td>
   </tr>
@@ -486,14 +531,6 @@
     </table>
   </td>
 </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a href="rtslib.target.TPG-class.html#alua_metadata_path" class="summary-name">alua_metadata_path</a><br />
-      Get the ALUA metadata directory path for the TPG.
-    </td>
-  </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
@@ -550,12 +587,54 @@
       Get or set (once) the TPG's Nexus is used.
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.TPG-class.html#chap_userid" class="summary-name">chap_userid</a><br />
+      Set or get the initiator CHAP auth userid.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.TPG-class.html#chap_password" class="summary-name">chap_password</a><br />
+      Set or get the initiator CHAP auth password.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.TPG-class.html#chap_mutual_userid" class="summary-name">chap_mutual_userid</a><br />
+      Set or get the initiator CHAP auth userid.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.TPG-class.html#chap_mutual_password" class="summary-name">chap_mutual_password</a><br />
+      Set or get the initiator CHAP auth password.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.target.TPG-class.html#authenticate_target" class="summary-name">authenticate_target</a><br />
+      Get the boolean authenticate target flag.
+    </td>
+  </tr>
   <tr>
     <td colspan="2" class="summary">
     <p class="indent-wrapped-lines"><b>Inherited from <code><a href="rtslib.node.CFSNode-class.html">node.CFSNode</a></code></b>:
       <code><a href="rtslib.node.CFSNode-class.html#exists">exists</a></code>,
-      <code><a href="rtslib.node.CFSNode-class.html#is_fresh">is_fresh</a></code>,
       <code><a href="rtslib.node.CFSNode-class.html#path">path</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
       </p>
     </td>
   </tr>
@@ -578,6 +657,30 @@
   </td>
 </tr>
 </table>
+<a name="__repr__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__repr__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Representation operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="rtslib.target-pysrc.html#TPG.__repr__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>repr(x)</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__repr__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
 <a name="__init__"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -596,7 +699,7 @@
     </td>
   </tr></table>
   
-  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
@@ -620,7 +723,7 @@
     <dt>Returns:</dt>
         <dd>A TPG object.</dd>
     <dt>Overrides:
-        <a href="rtslib.node.CFSNode-class.html#__init__">node.CFSNode.__init__</a>
+        object.__init__
     </dt>
   </dl>
 </td></tr></table>
@@ -640,8 +743,8 @@
     </td>
   </tr></table>
   
-  <p>Enables or disables the TPG. Raises an error if trying to disable a 
-  TPG without en enable attribute (but enabling works in that case).</p>
+  <p>Enables or disables the TPG. If the TPG doesn't support the enable 
+  attribute, do nothing.</p>
   <dl class="fields">
   </dl>
 </td></tr></table>
@@ -664,35 +767,6 @@
   <p>Sets the nexus initiator WWN. Raises an exception if the nexus is 
   already set or if the TPG does not use a nexus.</p>
   <dl class="fields">
-  </dl>
-</td></tr></table>
-</div>
-<a name="_create_in_cfs_ine"></a>
-<div class="private">
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">_create_in_cfs_ine</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">mode</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="rtslib.target-pysrc.html#TPG._create_in_cfs_ine">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Creates the configFS node if it does not already exists depending on 
-  the mode. any -&gt; makes sure it exists, also works if the node already 
-  does exists lookup -&gt; make sure it does NOT exists create -&gt; create
-  the node which must not exists beforehand Upon success (no exception 
-  raised), self._fresh is True if a node was created, else self._fresh is 
-  False.</p>
-  <dl class="fields">
-    <dt>Overrides:
-        <a href="rtslib.node.CFSNode-class.html#_create_in_cfs_ine" onclick="show_private();">node.CFSNode._create_in_cfs_ine</a>
-        <dd><em class="note">(inherited documentation)</em></dd>
-    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -762,20 +836,6 @@
   </td>
 </tr>
 </table>
-<a name="alua_metadata_path"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <h3 class="epydoc">alua_metadata_path</h3>
-  <p>Get the ALUA metadata directory path for the TPG.</p>
-  <dl class="fields">
-    <dt>Get Method:</dt>
-    <dd class="value"><span class="summary-sig"><a href="rtslib.target.TPG-class.html#_get_alua_metadata_path" class="summary-sig-name" onclick="show_private();">_get_alua_metadata_path</a>(<span class="summary-sig-arg">self</span>)</span>
-    </dd>
-  </dl>
-</td></tr></table>
-</div>
 <a name="tag"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -887,6 +947,112 @@
   </dl>
 </td></tr></table>
 </div>
+<a name="chap_userid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">chap_userid</h3>
+  <p>Set or get the initiator CHAP auth userid.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f53c0&gt;
+</pre></td></tr></table>
+
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f5418&gt;
+</pre></td></tr></table>
+
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="chap_password"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">chap_password</h3>
+  <p>Set or get the initiator CHAP auth password.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f54c8&gt;
+</pre></td></tr></table>
+
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f5520&gt;
+</pre></td></tr></table>
+
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="chap_mutual_userid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">chap_mutual_userid</h3>
+  <p>Set or get the initiator CHAP auth userid.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f55d0&gt;
+</pre></td></tr></table>
+
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f5628&gt;
+</pre></td></tr></table>
+
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="chap_mutual_password"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">chap_mutual_password</h3>
+  <p>Set or get the initiator CHAP auth password.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f56d8&gt;
+</pre></td></tr></table>
+
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><table><tr><td><pre class="variable">
+&lt;functools.partial object at 0x18f5730&gt;
+</pre></td></tr></table>
+
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="authenticate_target"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">authenticate_target</h3>
+  <p>Get the boolean authenticate target flag.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="rtslib.target.TPG-class.html#_get_authenticate_target" class="summary-sig-name" onclick="show_private();">_get_authenticate_target</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
 <br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
@@ -914,8 +1080,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Mon Mar 19 14:44:43 2012
+    Generated by Epydoc 3.0.1 on Wed Apr 16 22:40:11 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

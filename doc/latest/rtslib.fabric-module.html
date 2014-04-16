@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>rtslib.fabric</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="rtslib-module.html">Package&nbsp;rtslib</a> ::
+        Module&nbsp;fabric
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="rtslib.fabric-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module fabric</h1><p class="nomargin-top"><span class="codelink"><a href="rtslib.fabric-pysrc.html">source&nbsp;code</a></span></p>
+<pre class="literalblock">
+
+This file is part of RTSLib.
+Copyright (c) 2011-2013 by Datera, Inc
+Copyright (c) 2013 by Andy Grover
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may
+not use this file except in compliance with the License. You may obtain
+a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+
+
+Description
+-----------
+
+Fabrics may differ in how fabric WWNs are represented, as well as
+what capabilities they support
+
+
+Available parameters
+--------------------
+
+* features
+Lists the target fabric available features. Default value:
+(&quot;discovery_auth&quot;, &quot;acls&quot;, &quot;auth&quot;, &quot;nps&quot;)
+example: features = (&quot;discovery_auth&quot;, &quot;acls&quot;, &quot;auth&quot;)
+example: features = () # no features supported
+
+Detail of features:
+
+  * tpgts
+  The target fabric module is using iSCSI-style target portal group tags.
+
+  * discovery_auth
+  The target fabric module supports a fabric-wide authentication for
+  discovery.
+
+  * acls
+  The target's TPGTs support explicit initiator ACLs.
+
+  * auth
+  The target's TPGT's support per-TPG authentication, and
+  the target's TPGT's ACLs support per-ACL initiator authentication.
+  Fabrics that support auth must support acls.
+
+  * nps
+  The TPGTs support iSCSI-like IPv4/IPv6 network portals, using IP:PORT
+  group names.
+
+  * nexus
+  The TPGTs have a 'nexus' attribute that contains the local initiator
+  serial unit. This attribute must be set before being able to create any
+  LUNs.
+
+  * wwn_types
+  Sets the type of WWN expected by the target fabric. Defaults to 'free'.
+  Usually a fabric will only support one type but iSCSI supports more.
+  First entry is the &quot;native&quot; wwn type - i.e. if a wwn can be generated, it
+  will be of this type.
+  Example: wwn_types = (&quot;eui&quot;,)
+  Current valid types are:
+
+    * free
+    Freeform WWN.
+
+    * iqn
+    The fabric module targets are using iSCSI-type IQNs.
+
+    * naa
+    NAA FC or SAS address type WWN.
+
+    * eui
+    EUI-64. See http://en.wikipedia.org/wiki/MAC_address for info on this format.
+
+    * unit_serial
+    Disk-type unit serial.
+
+* wwns
+This property returns an iterable (either generator or list) of valid
+target WWNs for the fabric, if WWNs should be chosen from existing
+fabric interfaces. The most common case for this is hardware-set
+WWNs. WWNs should conform to rtslib's normalized internal format: the wwn
+type (see above), a period, then the wwn with interstitial dividers like
+':' removed.
+
+* to_fabric_wwn()
+Converts WWNs from normalized format (see above) to whatever the kernel code
+expects when getting a wwn. Only needed if different from normalized format.
+
+* kernel_module
+Sets the name of the kernel module implementing the fabric modules. If
+not specified, it will be assumed to be MODNAME_target_mod, where
+MODNAME is the name of the fabric module, from the fabrics list. Note
+that you must not specify any .ko or such extension here.
+Example: self.kernel_module = &quot;my_module&quot;
+
+* _path
+Sets the path of the configfs group used by the fabric module. Defaults to the
+name of the module from the fabrics list.
+Example: self._path = &quot;%s/%s&quot; % (self.configfs_dir, &quot;my_cfs_dir&quot;)
+
+</pre>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric._BaseFabricModule-class.html" class="summary-name" onclick="show_private();">_BaseFabricModule</a><br />
+      Abstract Base clase for Fabric Modules.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.ISCSIFabricModule-class.html" class="summary-name">ISCSIFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.LoopbackFabricModule-class.html" class="summary-name">LoopbackFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.SBPFabricModule-class.html" class="summary-name">SBPFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.Qla2xxxFabricModule-class.html" class="summary-name">Qla2xxxFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.SRPTFabricModule-class.html" class="summary-name">SRPTFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.FCoEFabricModule-class.html" class="summary-name">FCoEFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.USBGadgetFabricModule-class.html" class="summary-name">USBGadgetFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.VhostFabricModule-class.html" class="summary-name">VhostFabricModule</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric.FabricModule-class.html" class="summary-name">FabricModule</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="version_attributes"></a><span class="summary-name">version_attributes</span> = <code title="set(['lio_version', 'version'])"><code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">lio_version</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">version</code><code class="variable-quote">'</code><code class="variable-group">])</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="discovery_auth_attributes"></a><span class="summary-name">discovery_auth_attributes</span> = <code title="set(['discovery_auth'])"><code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">discovery_auth</code><code class="variable-quote">'</code><code class="variable-group">])</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric-module.html#target_names_excludes" class="summary-name">target_names_excludes</a> = <code title="set(['discovery_auth', 'lio_version', 'version'])"><code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">discovery_auth</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lio_version</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="rtslib.fabric-module.html#fabric_modules" class="summary-name">fabric_modules</a> = <code title="{'iscsi': &lt;class 'rtslib.fabric.ISCSIFabricModule'&gt;,
+ 'loopback': &lt;class 'rtslib.fabric.LoopbackFabricModule'&gt;,
+ 'qla2xxx': &lt;class 'rtslib.fabric.Qla2xxxFabricModule'&gt;,
+ 'sbp': &lt;class 'rtslib.fabric.SBPFabricModule'&gt;,
+ 'srpt': &lt;class 'rtslib.fabric.SRPTFabricModule'&gt;,
+ 'tcm_fc': &lt;class 'rtslib.fabric.FCoEFabricModule'&gt;,
+ 'vhost': &lt;class 'rtslib.fabric.VhostFabricModule'&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">iscsi</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.ISCSIFabricMo<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'rtslib'"><code class="variable-quote">'</code><code class="variable-string">rtslib</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="target_names_excludes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">target_names_excludes</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">set([</code><code class="variable-quote">'</code><code class="variable-string">discovery_auth</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lio_version</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">version</code><code class="variable-quote">'</code><code class="variable-group">])</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fabric_modules"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">fabric_modules</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">iscsi</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.ISCSIFabricModule'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">loopback</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.LoopbackFabricModule'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">qla2xxx</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.Qla2xxxFabricModule'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">sbp</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.SBPFabricModule'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">srpt</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.SRPTFabricModule'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">tcm_fc</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.FCoEFabricModule'&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">vhost</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;class 'rtslib.fabric.VhostFabricModule'&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="rtslib-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Apr 16 22:40:11 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
